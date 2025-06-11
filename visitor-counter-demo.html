@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>معاينة عداد الزوار</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 50px 20px;
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .demo-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.1);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+        }
+        .footer-demo {
+            background: #2c3e50;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+        .preview-section {
+            background: rgba(255,255,255,0.05);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 20px 0;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .code-block {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        .feature-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+        .feature-list i {
+            color: #3498db;
+            margin-left: 10px;
+            width: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-container">
+        <h1 class="text-center mb-4">
+            👁️ معاينة عداد الزوار المحسن
+        </h1>
+        
+        <div class="preview-section">
+            <h3>🎯 كيف سيظهر في موقعك:</h3>
+            <div class="footer-demo">
+                <div class="row align-items-center">
+                    <div class="col-md-4">
+                        <p class="mb-0">&copy; 2024 فارس. جميع الحقوق محفوظة.</p>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <!-- Demo Counter -->
+                        <div class="analytics-display">
+                            <div class="counter-stats">
+                                <div class="counter-item">
+                                    <i class="bi bi-eye"></i>
+                                    <span class="counter-number">1,247</span>
+                                    <span class="counter-label">مشاهدة</span>
+                                </div>
+                                <div class="counter-divider">•</div>
+                                <div class="counter-item">
+                                    <i class="bi bi-people"></i>
+                                    <span class="counter-number">342</span>
+                                    <span class="counter-label">زائر</span>
+                                </div>
+                                <div class="counter-divider">•</div>
+                                <div class="counter-item">
+                                    <i class="bi bi-calendar-check"></i>
+                                    <span class="counter-number">15 يوم</span>
+                                    <span class="counter-label">منذ البداية</span>
+                                </div>
+                            </div>
+                            <div class="counter-subtitle">
+                                شكراً لزيارتكم موقعي الشخصي
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-md-end">
+                        <a href="#" class="text-light me-3">سياسة الخصوصية</a>
+                        <a href="#" class="text-light">شروط الاستخدام</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="preview-section">
+            <h3>📱 على الهاتف المحمول:</h3>
+            <div class="footer-demo">
+                <div class="text-center">
+                    <div class="analytics-display">
+                        <div class="counter-stats" style="flex-direction: column; gap: 8px;">
+                            <div class="counter-item" style="flex-direction: row; gap: 8px;">
+                                <i class="bi bi-eye"></i>
+                                <span class="counter-number">1,247</span>
+                                <span class="counter-label">مشاهدة</span>
+                            </div>
+                            <div class="counter-item" style="flex-direction: row; gap: 8px;">
+                                <i class="bi bi-people"></i>
+                                <span class="counter-number">342</span>
+                                <span class="counter-label">زائر</span>
+                            </div>
+                            <div class="counter-item" style="flex-direction: row; gap: 8px;">
+                                <i class="bi bi-calendar-check"></i>
+                                <span class="counter-number">15 يوم</span>
+                                <span class="counter-label">منذ البداية</span>
+                            </div>
+                        </div>
+                        <div class="counter-subtitle">
+                            شكراً لزيارتكم موقعي الشخصي
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="preview-section">
+            <h3>✨ المميزات الجديدة:</h3>
+            <ul class="feature-list">
+                <li><i class="bi bi-eye-fill"></i> <strong>عدد المشاهدات:</strong> إجمالي مشاهدات جميع الصفحات</li>
+                <li><i class="bi bi-people-fill"></i> <strong>الزوار الفريدون:</strong> عدد الأشخاص المختلفين الذين زاروا الموقع</li>
+                <li><i class="bi bi-calendar-check-fill"></i> <strong>مدة التشغيل:</strong> عدد الأيام منذ بداية تتبع الزوار</li>
+                <li><i class="bi bi-heart-fill"></i> <strong>رسالة شكر:</strong> رسالة ترحيبية للزوار</li>
+                <li><i class="bi bi-phone-fill"></i> <strong>تصميم متجاوب:</strong> يتكيف مع جميع أحجام الشاشات</li>
+                <li><i class="bi bi-moon-fill"></i> <strong>دعم المظهر المظلم:</strong> يتغير مع تبديل المظهر</li>
+                <li><i class="bi bi-speedometer2"></i> <strong>تحديث فوري:</strong> يتحدث تلقائياً مع كل زيارة</li>
+            </ul>
+        </div>
+
+        <div class="preview-section">
+            <h3>🎨 التخصيص:</h3>
+            <p>يمكنك تخصيص العداد عبر تعديل ملف <code>js/analytics.js</code>:</p>
+            <div class="code-block">
+// تغيير رسالة الشكر
+.counter-subtitle {
+    "شكراً لزيارتكم موقعي الشخصي"  // غير هذا النص
+}
+
+// تغيير الألوان
+.counter-item i {
+    color: #3498db;  // لون الأيقونات
+}
+
+// إخفاء عنصر معين
+.counter-divider {
+    display: none;  // إخفاء النقاط الفاصلة
+}
+            </div>
+        </div>
+
+        <div class="preview-section">
+            <h3>🚀 كيفية التفعيل:</h3>
+            <ol style="padding-right: 20px;">
+                <li><strong>ارفع الملفات المحدثة</strong> إلى Netlify</li>
+                <li><strong>زر موقعك</strong> لبدء تتبع الزوار</li>
+                <li><strong>تحقق من الفوتر</strong> - ستجد العداد يعمل</li>
+                <li><strong>شارك الموقع</strong> مع الأصدقاء لرؤية الأرقام تزيد</li>
+            </ol>
+        </div>
+
+        <div class="text-center mt-4">
+            <h4>🎉 عدادك جاهز للعمل!</h4>
+            <p>ارفع الملفات إلى Netlify وستبدأ في رؤية إحصائيات زوارك فوراً</p>
+        </div>
+    </div>
+
+    <!-- Include the actual analytics CSS -->
+    <style>
+        .analytics-display {
+            text-align: center;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            margin: 10px 0;
+        }
+        
+        .counter-stats {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+        }
+        
+        .counter-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2px;
+            min-width: 60px;
+        }
+        
+        .counter-item i {
+            font-size: 1.2rem;
+            color: #3498db;
+            margin-bottom: 2px;
+        }
+        
+        .counter-number {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: white;
+            line-height: 1;
+        }
+        
+        .counter-label {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1;
+        }
+        
+        .counter-divider {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 1.2rem;
+            margin: 0 5px;
+        }
+        
+        .counter-subtitle {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-style: italic;
+            margin-top: 5px;
+        }
+    </style>
+</body>
+</html>

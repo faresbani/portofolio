@@ -151,15 +151,35 @@ class SimpleAnalytics {
         if (counterElement) {
             const analytics = this.getAnalytics();
             analytics.uniqueVisitors = new Set(analytics.uniqueVisitors);
-            
+
+            // Calculate days since first visit
+            const daysSinceStart = Math.floor((Date.now() - analytics.firstVisit) / (1000 * 60 * 60 * 24));
+            const daysText = daysSinceStart === 0 ? 'اليوم' : `${daysSinceStart} يوم`;
+
             counterElement.innerHTML = `
                 <div class="analytics-display">
-                    <span class="counter-item">
-                        <i class="bi bi-eye"></i> ${analytics.totalViews.toLocaleString()} مشاهدة
-                    </span>
-                    <span class="counter-item">
-                        <i class="bi bi-people"></i> ${analytics.uniqueVisitors.size.toLocaleString()} زائر
-                    </span>
+                    <div class="counter-stats">
+                        <div class="counter-item">
+                            <i class="bi bi-eye"></i>
+                            <span class="counter-number">${analytics.totalViews.toLocaleString()}</span>
+                            <span class="counter-label">مشاهدة</span>
+                        </div>
+                        <div class="counter-divider">•</div>
+                        <div class="counter-item">
+                            <i class="bi bi-people"></i>
+                            <span class="counter-number">${analytics.uniqueVisitors.size.toLocaleString()}</span>
+                            <span class="counter-label">زائر</span>
+                        </div>
+                        <div class="counter-divider">•</div>
+                        <div class="counter-item">
+                            <i class="bi bi-calendar-check"></i>
+                            <span class="counter-number">${daysText}</span>
+                            <span class="counter-label">منذ البداية</span>
+                        </div>
+                    </div>
+                    <div class="counter-subtitle">
+                        شكراً لزيارتكم موقعي الشخصي
+                    </div>
                 </div>
             `;
         }
@@ -221,33 +241,120 @@ window.portfolioAnalytics = analytics;
 const style = document.createElement('style');
 style.textContent = `
     .analytics-display {
-        display: flex;
-        gap: 15px;
-        align-items: center;
-        font-size: 0.9rem;
-        color: #666;
+        text-align: center;
+        padding: 15px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
         margin: 10px 0;
     }
-    
+
+    .counter-stats {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 8px;
+        flex-wrap: wrap;
+    }
+
     .counter-item {
         display: flex;
+        flex-direction: column;
         align-items: center;
-        gap: 5px;
+        gap: 2px;
+        min-width: 60px;
     }
-    
+
     .counter-item i {
-        color: var(--secondary-color, #3498db);
+        font-size: 1.2rem;
+        color: #3498db;
+        margin-bottom: 2px;
     }
-    
+
+    .counter-number {
+        font-size: 1.1rem;
+        font-weight: bold;
+        color: white;
+        line-height: 1;
+    }
+
+    .counter-label {
+        font-size: 0.75rem;
+        color: rgba(255, 255, 255, 0.8);
+        line-height: 1;
+    }
+
+    .counter-divider {
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 1.2rem;
+        margin: 0 5px;
+    }
+
+    .counter-subtitle {
+        font-size: 0.8rem;
+        color: rgba(255, 255, 255, 0.7);
+        font-style: italic;
+        margin-top: 5px;
+    }
+
+    /* Dark theme adjustments */
     [data-theme="dark"] .analytics-display {
-        color: #bdc3c7;
+        background: rgba(52, 73, 94, 0.3);
+        border-color: rgba(255, 255, 255, 0.1);
     }
-    
-    @media (max-width: 576px) {
+
+    [data-theme="dark"] .counter-item i {
+        color: #5dade2;
+    }
+
+    /* Mobile responsive */
+    @media (max-width: 768px) {
         .analytics-display {
+            padding: 12px;
+            margin: 15px 0;
+        }
+
+        .counter-stats {
+            gap: 10px;
+        }
+
+        .counter-item {
+            min-width: 50px;
+        }
+
+        .counter-number {
+            font-size: 1rem;
+        }
+
+        .counter-label {
+            font-size: 0.7rem;
+        }
+
+        .counter-subtitle {
+            font-size: 0.75rem;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .counter-stats {
             flex-direction: column;
             gap: 8px;
-            text-align: center;
+        }
+
+        .counter-divider {
+            display: none;
+        }
+
+        .counter-item {
+            flex-direction: row;
+            gap: 8px;
+            min-width: auto;
+        }
+
+        .counter-item i {
+            font-size: 1rem;
         }
     }
 `;
