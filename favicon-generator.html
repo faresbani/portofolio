@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مولد أيقونة الموقع</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: white;
+        }
+        .container {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+        .preview {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: center;
+            color: #333;
+        }
+        .favicon-preview {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border: 2px solid #dee2e6;
+        }
+        .control-group {
+            margin: 20px 0;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        button {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 5px;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #2980b9;
+        }
+        .download-btn {
+            background: #27ae60;
+        }
+        .download-btn:hover {
+            background: #229954;
+        }
+        .color-input {
+            width: 60px !important;
+            height: 40px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .size-preview {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 style="text-align: center; margin-bottom: 30px;">
+            🎨 مولد أيقونة الموقع
+        </h1>
+        
+        <div class="control-group">
+            <label for="iconText">النص/الحرف:</label>
+            <input type="text" id="iconText" value="ف" maxlength="2" placeholder="أدخل حرف أو رمز">
+        </div>
+        
+        <div class="control-group">
+            <label for="bgColor1">اللون الأول:</label>
+            <input type="color" id="bgColor1" value="#3498db" class="color-input">
+        </div>
+        
+        <div class="control-group">
+            <label for="bgColor2">اللون الثاني:</label>
+            <input type="color" id="bgColor2" value="#2980b9" class="color-input">
+        </div>
+        
+        <div class="control-group">
+            <label for="textColor">لون النص:</label>
+            <input type="color" id="textColor" value="#ffffff" class="color-input">
+        </div>
+        
+        <div class="control-group">
+            <label for="shape">الشكل:</label>
+            <select id="shape">
+                <option value="circle">دائري</option>
+                <option value="square">مربع</option>
+                <option value="rounded">مربع مدور</option>
+            </select>
+        </div>
+        
+        <div class="preview">
+            <h3>معاينة الأيقونة</h3>
+            <div class="size-preview">
+                <div class="favicon-preview">
+                    <div id="favicon16" style="width: 16px; height: 16px;"></div>
+                    <div>16x16</div>
+                </div>
+                <div class="favicon-preview">
+                    <div id="favicon32" style="width: 32px; height: 32px;"></div>
+                    <div>32x32</div>
+                </div>
+                <div class="favicon-preview">
+                    <div id="favicon64" style="width: 64px; height: 64px;"></div>
+                    <div>64x64</div>
+                </div>
+            </div>
+        </div>
+        
+        <div style="text-align: center;">
+            <button onclick="updatePreview()">تحديث المعاينة</button>
+            <button onclick="downloadSVG()" class="download-btn">تحميل SVG</button>
+            <button onclick="copyCode()" style="background: #e74c3c;">نسخ الكود</button>
+        </div>
+        
+        <div class="preview" style="margin-top: 30px;">
+            <h4>كود SVG:</h4>
+            <textarea id="svgCode" style="width: 100%; height: 150px; font-family: monospace; color: #333;" readonly></textarea>
+        </div>
+        
+        <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px; margin-top: 20px;">
+            <h4>📝 تعليمات الاستخدام:</h4>
+            <ol>
+                <li>اختر النص أو الحرف المطلوب</li>
+                <li>حدد الألوان المفضلة</li>
+                <li>اختر شكل الأيقونة</li>
+                <li>انقر "تحديث المعاينة"</li>
+                <li>احفظ الكود في ملف <code>img/favicon.svg</code></li>
+                <li>ارفع الملفات إلى Netlify</li>
+            </ol>
+        </div>
+    </div>
+
+    <script>
+        function generateSVG(size) {
+            const text = document.getElementById('iconText').value || 'ف';
+            const color1 = document.getElementById('bgColor1').value;
+            const color2 = document.getElementById('bgColor2').value;
+            const textColor = document.getElementById('textColor').value;
+            const shape = document.getElementById('shape').value;
+            
+            let shapeElement;
+            const radius = size / 2 - 1;
+            const center = size / 2;
+            
+            switch(shape) {
+                case 'circle':
+                    shapeElement = `<circle cx="${center}" cy="${center}" r="${radius}" fill="url(#grad)" stroke="#2c3e50" stroke-width="1"/>`;
+                    break;
+                case 'square':
+                    shapeElement = `<rect x="1" y="1" width="${size-2}" height="${size-2}" fill="url(#grad)" stroke="#2c3e50" stroke-width="1"/>`;
+                    break;
+                case 'rounded':
+                    const cornerRadius = size * 0.15;
+                    shapeElement = `<rect x="1" y="1" width="${size-2}" height="${size-2}" rx="${cornerRadius}" fill="url(#grad)" stroke="#2c3e50" stroke-width="1"/>`;
+                    break;
+            }
+            
+            const fontSize = Math.max(8, size * 0.6);
+            const textY = center + fontSize * 0.35;
+            
+            return `<svg width="${size}" height="${size}" viewBox="0 0 ${size} ${size}" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:${color1};stop-opacity:1" />
+      <stop offset="100%" style="stop-color:${color2};stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  ${shapeElement}
+  <text x="${center}" y="${textY}" font-family="Arial, sans-serif" font-size="${fontSize}" font-weight="bold" 
+        fill="${textColor}" text-anchor="middle">${text}</text>
+</svg>`;
+        }
+        
+        function updatePreview() {
+            // Update previews
+            document.getElementById('favicon16').innerHTML = generateSVG(16);
+            document.getElementById('favicon32').innerHTML = generateSVG(32);
+            document.getElementById('favicon64').innerHTML = generateSVG(64);
+            
+            // Update code textarea
+            document.getElementById('svgCode').value = generateSVG(32);
+        }
+        
+        function downloadSVG() {
+            const svgContent = generateSVG(32);
+            const blob = new Blob([svgContent], {type: 'image/svg+xml'});
+            const url = URL.createObjectURL(blob);
+            
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'favicon.svg';
+            link.click();
+            
+            URL.revokeObjectURL(url);
+        }
+        
+        function copyCode() {
+            const textarea = document.getElementById('svgCode');
+            textarea.select();
+            document.execCommand('copy');
+            alert('تم نسخ الكود! الصقه في ملف img/favicon.svg');
+        }
+        
+        // Auto-update on input change
+        document.getElementById('iconText').addEventListener('input', updatePreview);
+        document.getElementById('bgColor1').addEventListener('change', updatePreview);
+        document.getElementById('bgColor2').addEventListener('change', updatePreview);
+        document.getElementById('textColor').addEventListener('change', updatePreview);
+        document.getElementById('shape').addEventListener('change', updatePreview);
+        
+        // Initial preview
+        updatePreview();
+    </script>
+</body>
+</html>

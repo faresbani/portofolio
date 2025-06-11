@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة تحكم الإحصائيات</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <style>
+        .stats-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .stats-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .stats-label {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+        .page-stats {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .progress-custom {
+            height: 8px;
+            border-radius: 4px;
+            background-color: #e9ecef;
+        }
+        .progress-bar-custom {
+            background: linear-gradient(90deg, #3498db, #2ecc71);
+            border-radius: 4px;
+        }
+        .refresh-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+    </style>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X037GY8YZP"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-X037GY8YZP');
+    </script>
+  </head>
+<body>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="text-center mb-4">
+                    <i class="bi bi-graph-up text-primary"></i>
+                    لوحة تحكل إحصائيات الموقع
+                </h1>
+                <p class="text-center text-muted mb-5">
+                    إحصائيات مفصلة عن زوار موقعك الشخصي
+                </p>
+            </div>
+        </div>
+
+        <!-- Overall Stats -->
+        <div class="row" id="overallStats">
+            <div class="col-lg-3 col-md-6">
+                <div class="stats-card">
+                    <div class="d-flex align-items-center">
+                        <div class="flex-grow-1">
+                            <div class="stats-number" id="totalViews">0</div>
+                            <div class="stats-label">إجمالي المشاهدات</div>
+                        </div>
+                        <div class="ms-3">
+                            <i class="bi bi-eye" style="font-size: 2.5rem; opacity: 0.7;"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6">
+                <div class="stats-card" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                    <div class="d-flex align-items-center">
+                        <div class="flex-grow-1">
+                            <div class="stats-number" id="uniqueVisitors">0</div>
+                            <div class="stats-label">زوار فريدون</div>
+                        </div>
+                        <div class="ms-3">
+                            <i class="bi bi-people" style="font-size: 2.5rem; opacity: 0.7;"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6">
+                <div class="stats-card" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                    <div class="d-flex align-items-center">
+                        <div class="flex-grow-1">
+                            <div class="stats-number" id="totalSessions">0</div>
+                            <div class="stats-label">جلسات التصفح</div>
+                        </div>
+                        <div class="ms-3">
+                            <i class="bi bi-clock-history" style="font-size: 2.5rem; opacity: 0.7;"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6">
+                <div class="stats-card" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                    <div class="d-flex align-items-center">
+                        <div class="flex-grow-1">
+                            <div class="stats-number" id="avgTime">0</div>
+                            <div class="stats-label">متوسط الوقت</div>
+                        </div>
+                        <div class="ms-3">
+                            <i class="bi bi-stopwatch" style="font-size: 2.5rem; opacity: 0.7;"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Page Statistics -->
+        <div class="row">
+            <div class="col-12">
+                <div class="page-stats">
+                    <h3 class="mb-4">
+                        <i class="bi bi-file-earmark-text text-primary"></i>
+                        إحصائيات الصفحات
+                    </h3>
+                    <div id="pageStats">
+                        <!-- Page stats will be inserted here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="row">
+            <div class="col-12">
+                <div class="page-stats text-center">
+                    <h4 class="mb-4">إجراءات</h4>
+                    <div class="btn-group" role="group">
+                        <button class="btn btn-primary" onclick="refreshStats()">
+                            <i class="bi bi-arrow-clockwise"></i> تحديث البيانات
+                        </button>
+                        <button class="btn btn-success" onclick="exportData()">
+                            <i class="bi bi-download"></i> تصدير البيانات
+                        </button>
+                        <button class="btn btn-warning" onclick="showRawData()">
+                            <i class="bi bi-code"></i> البيانات الخام
+                        </button>
+                        <button class="btn btn-danger" onclick="resetData()">
+                            <i class="bi bi-trash"></i> إعادة تعيين
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Visit Timeline -->
+        <div class="row">
+            <div class="col-12">
+                <div class="page-stats">
+                    <h4 class="mb-3">
+                        <i class="bi bi-calendar-event text-primary"></i>
+                        معلومات الزيارات
+                    </h4>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p><strong>أول زيارة:</strong> <span id="firstVisit">-</span></p>
+                        </div>
+                        <div class="col-md-6">
+                            <p><strong>آخر زيارة:</strong> <span id="lastVisit">-</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Refresh Button -->
+    <button class="btn btn-primary refresh-btn" onclick="refreshStats()" title="تحديث البيانات">
+        <i class="bi bi-arrow-clockwise"></i>
+    </button>
+
+    <!-- Raw Data Modal -->
+    <div class="modal fade" id="rawDataModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">البيانات الخام</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <pre id="rawDataContent" style="background: #f8f9fa; padding: 15px; border-radius: 5px; max-height: 400px; overflow-y: auto;"></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/analytics.js"></script>
+    <script>
+        // Dashboard functionality
+        function refreshStats() {
+            if (window.portfolioAnalytics) {
+                const summary = window.portfolioAnalytics.getSummary();
+                updateDashboard(summary);
+            } else {
+                setTimeout(refreshStats, 500); // Wait for analytics to load
+            }
+        }
+
+        function updateDashboard(summary) {
+            // Update overall stats
+            document.getElementById('totalViews').textContent = summary.totalViews.toLocaleString();
+            document.getElementById('uniqueVisitors').textContent = summary.uniqueVisitors.toLocaleString();
+            document.getElementById('totalSessions').textContent = summary.sessions.toLocaleString();
+            
+            // Calculate average time
+            let totalTime = 0;
+            let totalViews = 0;
+            Object.values(summary.pages).forEach(page => {
+                totalTime += page.totalTime;
+                totalViews += page.views;
+            });
+            const avgTimeMinutes = totalViews > 0 ? Math.round((totalTime / totalViews) / 60000) : 0;
+            document.getElementById('avgTime').textContent = avgTimeMinutes + ' دقيقة';
+
+            // Update page stats
+            updatePageStats(summary.pages);
+
+            // Update visit dates
+            document.getElementById('firstVisit').textContent = summary.firstVisit.toLocaleString('ar-SA');
+            document.getElementById('lastVisit').textContent = summary.lastVisit.toLocaleString('ar-SA');
+        }
+
+        function updatePageStats(pages) {
+            const container = document.getElementById('pageStats');
+            const pageNames = {
+                '/': 'الصفحة الرئيسية',
+                '/index.html': 'الصفحة الرئيسية',
+                '/about.html': 'نبذة عني',
+                '/projects.html': 'المشاريع',
+                '/courses.html': 'الدورات',
+                '/articles.html': 'المقالات',
+                '/contact.html': 'تواصل معي'
+            };
+
+            let html = '';
+            const maxViews = Math.max(...Object.values(pages).map(p => p.views));
+
+            Object.entries(pages).forEach(([path, data]) => {
+                const pageName = pageNames[path] || path;
+                const percentage = maxViews > 0 ? (data.views / maxViews) * 100 : 0;
+                const avgTime = data.views > 0 ? Math.round((data.totalTime / data.views) / 1000) : 0;
+
+                html += `
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h6 class="mb-0">${pageName}</h6>
+                            <div class="text-muted">
+                                <span class="me-3">${data.views} مشاهدة</span>
+                                <span class="me-3">${data.uniqueViews.size} زائر فريد</span>
+                                <span>${avgTime} ثانية</span>
+                            </div>
+                        </div>
+                        <div class="progress-custom">
+                            <div class="progress-bar-custom" style="width: ${percentage}%"></div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = html || '<p class="text-muted">لا توجد بيانات متاحة</p>';
+        }
+
+        function exportData() {
+            if (window.portfolioAnalytics) {
+                window.portfolioAnalytics.exportData();
+            }
+        }
+
+        function showRawData() {
+            if (window.portfolioAnalytics) {
+                const summary = window.portfolioAnalytics.getSummary();
+                document.getElementById('rawDataContent').textContent = JSON.stringify(summary, null, 2);
+                new bootstrap.Modal(document.getElementById('rawDataModal')).show();
+            }
+        }
+
+        function resetData() {
+            if (confirm('هل أنت متأكد من إعادة تعيين جميع البيانات؟ لا يمكن التراجع عن هذا الإجراء.')) {
+                if (window.portfolioAnalytics) {
+                    window.portfolioAnalytics.reset();
+                    refreshStats();
+                    alert('تم إعادة تعيين البيانات بنجاح');
+                }
+            }
+        }
+
+        // Auto-refresh every 30 seconds
+        setInterval(refreshStats, 30000);
+
+        // Initial load
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(refreshStats, 1000);
+        });
+    </script>
+</body>
+</html>

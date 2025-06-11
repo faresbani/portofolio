@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.1);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+        .success {
+            color: #4CAF50;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+    </style>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X037GY8YZP"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-X037GY8YZP');
+    </script>
+      <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.svg">
+    <link rel="icon" type="image/svg+xml" sizes="16x16" href="img/favicon-16x16.svg">
+    <link rel="icon" type="image/svg+xml" sizes="32x32" href="img/favicon-32x32.svg">
+    <link rel="icon" type="image/svg+xml" sizes="192x192" href="img/android-chrome-192x192.svg">
+    <link rel="icon" type="image/svg+xml" sizes="512x512" href="img/android-chrome-512x512.svg">
+    
+    <!-- Web App Manifest -->
+    <meta name="theme-color" content="#3498db">
+    <meta name="msapplication-TileColor" content="#3498db">
+  </head>
+<body>
+    <div class="container">
+        <h1>🎉 GitHub Pages يعمل!</h1>
+        <p class="success">✅ تم تفعيل الموقع بنجاح</p>
+        <p>إذا كنت ترى هذه الصفحة، فإن GitHub Pages يعمل بشكل صحيح.</p>
+        <p>يمكنك الآن رفع ملفات موقعك الكامل.</p>
+        <hr style="margin: 30px 0; border: 1px solid rgba(255,255,255,0.3);">
+        <p><strong>الرابط:</strong> https://faresbani.github.io/portofolio/</p>
+        <p><strong>التاريخ:</strong> <span id="date"></span></p>
+    </div>
+    
+    <script>
+        document.getElementById('date').textContent = new Date().toLocaleString('ar-SA');
+    </script>
+</body>
+</html>

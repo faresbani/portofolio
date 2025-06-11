@@ -7,7 +7,19 @@ document.addEventListener('DOMContentLoaded', function() {
     initContactForm();
     initThemeToggle();
     initScrollEffects();
+    initAnalytics();
 });
+
+// Initialize analytics
+function initAnalytics() {
+    // Load analytics script if not already loaded
+    if (!window.portfolioAnalytics) {
+        const script = document.createElement('script');
+        script.src = 'js/analytics.js';
+        script.async = true;
+        document.head.appendChild(script);
+    }
+}
 
 // Navigation functionality
 function initNavigation() {

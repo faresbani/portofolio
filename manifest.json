@@ -1,0 +1,22 @@
+{
+  "name": "فارس - Portfolio",
+  "short_name": "فارس",
+  "description": "موقع فارس الشخصي - مطور ومصمم مواقع",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3498db",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "img/android-chrome-192x192.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "img/android-chrome-512x512.svg", 
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ]
+}
