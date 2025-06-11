@@ -1,0 +1,152 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "تطبيق إدارة المهام",
+      "description": "تطبيق Flutter لإدارة المهام اليومية مع واجهة مستخدم جميلة ومميزات متقدمة مثل التذكيرات والتصنيفات.",
+      "image": "img/project1.jpg",
+      "category": "mobile",
+      "technologies": ["Flutter", "Dart", "SQLite", "Provider"],
+      "features": [
+        "إضافة وتعديل المهام",
+        "تصنيف المهام حسب الأولوية",
+        "تذكيرات ذكية",
+        "إحصائيات الإنتاجية",
+        "مزامنة البيانات"
+      ],
+      "demoUrl": "#",
+      "githubUrl": "#",
+      "status": "completed",
+      "year": "2024"
+    },
+    {
+      "id": 2,
+      "title": "موقع تجارة إلكترونية",
+      "description": "موقع ويب متكامل للتجارة الإلكترونية مبني بـ Python Django مع لوحة تحكم إدارية شاملة.",
+      "image": "img/project2.jpg",
+      "category": "web",
+      "technologies": ["Python", "Django", "PostgreSQL", "Bootstrap", "JavaScript"],
+      "features": [
+        "كتالوج منتجات متقدم",
+        "نظام دفع آمن",
+        "إدارة المخزون",
+        "تقارير المبيعات",
+        "نظام العضويات"
+      ],
+      "demoUrl": "#",
+      "githubUrl": "#",
+      "status": "completed",
+      "year": "2024"
+    },
+    {
+      "id": 3,
+      "title": "أداة تحليل البيانات",
+      "description": "أداة Python لتحليل البيانات وإنشاء التقارير مع واجهة مستخدم تفاعلية باستخدام Streamlit.",
+      "image": "img/project3.jpg",
+      "category": "data",
+      "technologies": ["Python", "Pandas", "Matplotlib", "Streamlit", "NumPy"],
+      "features": [
+        "استيراد البيانات من مصادر متعددة",
+        "تحليل إحصائي شامل",
+        "رسوم بيانية تفاعلية",
+        "تصدير التقارير",
+        "واجهة مستخدم بسيطة"
+      ],
+      "demoUrl": "#",
+      "githubUrl": "#",
+      "status": "completed",
+      "year": "2023"
+    },
+    {
+      "id": 4,
+      "title": "تطبيق الطقس",
+      "description": "تطبيق جوال لعرض حالة الطقس مع تنبؤات دقيقة وواجهة مستخدم جذابة.",
+      "image": "img/project4.jpg",
+      "category": "mobile",
+      "technologies": ["Flutter", "Dart", "REST API", "Geolocator"],
+      "features": [
+        "الطقس الحالي والتنبؤات",
+        "تحديد الموقع التلقائي",
+        "إضافة مدن متعددة",
+        "تنبيهات الطقس",
+        "واجهة متحركة"
+      ],
+      "demoUrl": "#",
+      "githubUrl": "#",
+      "status": "completed",
+      "year": "2023"
+    },
+    {
+      "id": 5,
+      "title": "نظام إدارة المكتبة",
+      "description": "نظام ويب شامل لإدارة المكتبات مع إمكانيات الاستعارة والإرجاع وإدارة الأعضاء.",
+      "image": "img/project5.jpg",
+      "category": "web",
+      "technologies": ["Python", "Flask", "SQLAlchemy", "Bootstrap", "jQuery"],
+      "features": [
+        "فهرسة الكتب",
+        "نظام الاستعارة والإرجاع",
+        "إدارة الأعضاء",
+        "تقارير شاملة",
+        "بحث متقدم"
+      ],
+      "demoUrl": "#",
+      "githubUrl": "#",
+      "status": "in-progress",
+      "year": "2024"
+    },
+    {
+      "id": 6,
+      "title": "لوحة تحكم تحليلية",
+      "description": "لوحة تحكم تفاعلية لعرض البيانات والإحصائيات مع رسوم بيانية متقدمة.",
+      "image": "img/project6.jpg",
+      "category": "web",
+      "technologies": ["React", "D3.js", "Node.js", "MongoDB", "Express"],
+      "features": [
+        "رسوم بيانية تفاعلية",
+        "تحديث البيانات في الوقت الفعلي",
+        "تصدير التقارير",
+        "تخصيص العرض",
+        "واجهة متجاوبة"
+      ],
+      "demoUrl": "#",
+      "githubUrl": "#",
+      "status": "planning",
+      "year": "2024"
+    }
+  ],
+  "categories": [
+    {
+      "id": "all",
+      "name": "جميع المشاريع",
+      "count": 6
+    },
+    {
+      "id": "mobile",
+      "name": "تطبيقات الجوال",
+      "count": 2
+    },
+    {
+      "id": "web",
+      "name": "مواقع الويب",
+      "count": 3
+    },
+    {
+      "id": "data",
+      "name": "تحليل البيانات",
+      "count": 1
+    }
+  ],
+  "technologies": [
+    "Python",
+    "Flutter",
+    "Django",
+    "Flask",
+    "JavaScript",
+    "React",
+    "Bootstrap",
+    "SQLite",
+    "PostgreSQL",
+    "MongoDB"
+  ]
+}

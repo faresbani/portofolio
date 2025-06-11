@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>فارس | تواصل معي</title>
+    <meta name="description" content="تواصل مع فارس - مطور ومصمم مواقع متخصص في Python و Flutter">
+    
+    <!-- Bootstrap RTL CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.rtl.min.css" integrity="sha384-PRrgQVJ8NNHGieOA1grGdCTIt4h21CzJs6SnWH4YMQ6G5F5+IEzOHz67L4SQaF0o" crossorigin="anonymous">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/custom.css">
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <i class="bi bi-code-slash me-2"></i>فارس
+        </a>
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">الرئيسية</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">نبذة عني</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="projects.html">المشاريع</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="courses.html">الدورات</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="articles.html">المقالات</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="contact.html">تواصل معي</a>
+            </li>
+          </ul>
+          
+          <button class="btn btn-outline-secondary btn-sm me-2" id="themeToggle" title="تبديل المظهر">
+            <i class="bi bi-moon"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="hero-section" style="padding: 120px 0 80px;">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <h1 class="hero-title">تواصل معي</h1>
+            <p class="hero-subtitle">
+              هل لديك مشروع أو فكرة؟ دعنا نتحدث حول كيف يمكنني مساعدتك
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section bg-white">
+      <div class="container">
+        <div class="row">
+          <!-- Contact Form -->
+          <div class="col-lg-8 mb-5">
+            <div class="card">
+              <div class="card-body p-4">
+                <h3 class="card-title mb-4">أرسل رسالة</h3>
+                <form id="contactForm">
+                  <div class="row">
+                    <div class="col-md-6 mb-3">
+                      <label for="firstName" class="form-label">الاسم الأول *</label>
+                      <input type="text" class="form-control" id="firstName" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label for="lastName" class="form-label">الاسم الأخير *</label>
+                      <input type="text" class="form-control" id="lastName" required>
+                    </div>
+                  </div>
+                  
+                  <div class="row">
+                    <div class="col-md-6 mb-3">
+                      <label for="email" class="form-label">البريد الإلكتروني *</label>
+                      <input type="email" class="form-control" id="email" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label for="phone" class="form-label">رقم الهاتف</label>
+                      <input type="tel" class="form-control" id="phone">
+                    </div>
+                  </div>
+                  
+                  <div class="mb-3">
+                    <label for="subject" class="form-label">الموضوع *</label>
+                    <select class="form-select" id="subject" required>
+                      <option value="">اختر الموضوع</option>
+                      <option value="project">مشروع جديد</option>
+                      <option value="consultation">استشارة تقنية</option>
+                      <option value="course">دورة تدريبية</option>
+                      <option value="collaboration">تعاون</option>
+                      <option value="other">أخرى</option>
+                    </select>
+                  </div>
+                  
+                  <div class="mb-3">
+                    <label for="budget" class="form-label">الميزانية المتوقعة</label>
+                    <select class="form-select" id="budget">
+                      <option value="">اختر الميزانية</option>
+                      <option value="under-5k">أقل من 5,000 ريال</option>
+                      <option value="5k-15k">5,000 - 15,000 ريال</option>
+                      <option value="15k-30k">15,000 - 30,000 ريال</option>
+                      <option value="30k-50k">30,000 - 50,000 ريال</option>
+                      <option value="over-50k">أكثر من 50,000 ريال</option>
+                    </select>
+                  </div>
+                  
+                  <div class="mb-3">
+                    <label for="message" class="form-label">الرسالة *</label>
+                    <textarea class="form-control" id="message" rows="5" placeholder="اكتب رسالتك هنا..." required></textarea>
+                  </div>
+                  
+                  <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="privacy" required>
+                    <label class="form-check-label" for="privacy">
+                      أوافق على <a href="#" class="text-primary">سياسة الخصوصية</a> وشروط الاستخدام
+                    </label>
+                  </div>
+                  
+                  <button type="submit" class="btn btn-primary btn-lg">
+                    <i class="bi bi-send me-2"></i>إرسال الرسالة
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Contact Info -->
+          <div class="col-lg-4">
+            <div class="contact-info">
+              <h3 class="mb-4">معلومات التواصل</h3>
+              
+              <div class="contact-item mb-4">
+                <div class="d-flex align-items-center">
+                  <div class="contact-icon me-3">
+                    <i class="bi bi-envelope-fill"></i>
+                  </div>
+                  <div>
+                    <h6 class="mb-1">البريد الإلكتروني</h6>
+                    <p class="mb-0 text-muted">fares@example.com</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="contact-item mb-4">
+                <div class="d-flex align-items-center">
+                  <div class="contact-icon me-3">
+                    <i class="bi bi-phone-fill"></i>
+                  </div>
+                  <div>
+                    <h6 class="mb-1">رقم الهاتف</h6>
+                    <p class="mb-0 text-muted">+966 50 123 4567</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="contact-item mb-4">
+                <div class="d-flex align-items-center">
+                  <div class="contact-icon me-3">
+                    <i class="bi bi-geo-alt-fill"></i>
+                  </div>
+                  <div>
+                    <h6 class="mb-1">الموقع</h6>
+                    <p class="mb-0 text-muted">الرياض، المملكة العربية السعودية</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="contact-item mb-4">
+                <div class="d-flex align-items-center">
+                  <div class="contact-icon me-3">
+                    <i class="bi bi-clock-fill"></i>
+                  </div>
+                  <div>
+                    <h6 class="mb-1">ساعات العمل</h6>
+                    <p class="mb-0 text-muted">الأحد - الخميس: 9:00 ص - 6:00 م</p>
+                  </div>
+                </div>
+              </div>
+              
+              <hr class="my-4">
+              
+              <h5 class="mb-3">تابعني على</h5>
+              <div class="social-icons">
+                <a href="#" title="GitHub" class="me-2">
+                  <i class="bi bi-github"></i>
+                </a>
+                <a href="#" title="LinkedIn" class="me-2">
+                  <i class="bi bi-linkedin"></i>
+                </a>
+                <a href="#" title="Twitter" class="me-2">
+                  <i class="bi bi-twitter"></i>
+                </a>
+                <a href="#" title="Instagram" class="me-2">
+                  <i class="bi bi-instagram"></i>
+                </a>
+                <a href="#" title="YouTube" class="me-2">
+                  <i class="bi bi-youtube"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <h2 class="section-title">الأسئلة الشائعة</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <div class="accordion" id="faqAccordion">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                    كم تستغرق مدة تطوير التطبيق؟
+                  </button>
+                </h2>
+                <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                    تعتمد مدة التطوير على تعقيد المشروع وعدد المميزات المطلوبة. عادة ما تتراوح بين 4-12 أسبوع للتطبيقات البسيطة إلى المتوسطة.
+                  </div>
+                </div>
+              </div>
+              
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                    ما هي تكلفة تطوير موقع ويب؟
+                  </button>
+                </h2>
+                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                    تختلف التكلفة حسب نوع الموقع والمميزات المطلوبة. المواقع البسيطة تبدأ من 5,000 ريال، بينما المواقع المعقدة قد تصل إلى 50,000 ريال أو أكثر.
+                  </div>
+                </div>
+              </div>
+              
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                    هل تقدم دعم ما بعد التطوير؟
+                  </button>
+                </h2>
+                <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                    نعم، أقدم دعم مجاني لمدة 3 أشهر بعد تسليم المشروع، ويشمل إصلاح الأخطاء والتحديثات الأمنية الأساسية.
+                  </div>
+                </div>
+              </div>
+              
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                    هل يمكنك العمل على مشاريع بدوام جزئي؟
+                  </button>
+                </h2>
+                <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                    نعم، أعمل على مشاريع بدوام جزئي وكامل. يمكننا مناقشة الترتيبات المناسبة حسب احتياجات مشروعك.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section bg-primary text-white">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <h2>مستعد لبدء مشروعك؟</h2>
+            <p class="lead mb-4">
+              دعنا نحول فكرتك إلى واقع رقمي. تواصل معي اليوم للحصول على استشارة مجانية.
+            </p>
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+              <a href="mailto:fares@example.com" class="btn btn-light btn-lg">
+                <i class="bi bi-envelope me-2"></i>أرسل إيميل
+              </a>
+              <a href="tel:+966501234567" class="btn btn-outline-light btn-lg">
+                <i class="bi bi-phone me-2"></i>اتصل الآن
+              </a>
+              <a href="#" class="btn btn-outline-light btn-lg">
+                <i class="bi bi-whatsapp me-2"></i>واتساب
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h5>فارس</h5>
+            <p>
+              مطور ومصمم مواقع متخصص في Python و Flutter.
+              أحب إنشاء حلول تقنية مبتكرة.
+            </p>
+            <div class="social-icons">
+              <a href="#" title="GitHub"><i class="bi bi-github"></i></a>
+              <a href="#" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+              <a href="#" title="Twitter"><i class="bi bi-twitter"></i></a>
+              <a href="#" title="Instagram"><i class="bi bi-instagram"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 mb-4">
+            <h5>روابط سريعة</h5>
+            <ul class="list-unstyled">
+              <li><a href="index.html">الرئيسية</a></li>
+              <li><a href="about.html">نبذة عني</a></li>
+              <li><a href="projects.html">المشاريع</a></li>
+              <li><a href="contact.html">تواصل معي</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mb-4">
+            <h5>الخدمات</h5>
+            <ul class="list-unstyled">
+              <li><a href="#">تطوير تطبيقات الجوال</a></li>
+              <li><a href="#">تطوير مواقع الويب</a></li>
+              <li><a href="#">التدريب والتعليم</a></li>
+              <li><a href="#">استشارات تقنية</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mb-4">
+            <h5>تواصل معي</h5>
+            <ul class="list-unstyled">
+              <li><i class="bi bi-envelope me-2"></i>fares@example.com</li>
+              <li><i class="bi bi-phone me-2"></i>+966 50 123 4567</li>
+              <li><i class="bi bi-geo-alt me-2"></i>الرياض، السعودية</li>
+            </ul>
+          </div>
+        </div>
+
+        <hr class="my-4">
+
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <p class="mb-0">&copy; 2024 فارس. جميع الحقوق محفوظة.</p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <a href="#" class="text-light me-3">سياسة الخصوصية</a>
+            <a href="#" class="text-light">شروط الاستخدام</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="btn btn-primary position-fixed" style="bottom: 20px; left: 20px; display: none; z-index: 1000;">
+      <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="js/main.js"></script>
+  </body>
+</html>

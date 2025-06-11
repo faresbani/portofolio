@@ -1,0 +1,526 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>فارس | المقالات والمدونة</title>
+    <meta name="description" content="مقالات تقنية في البرمجة وتطوير التطبيقات - نصائح وحلول برمجية">
+    
+    <!-- Bootstrap RTL CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.rtl.min.css" integrity="sha384-PRrgQVJ8NNHGieOA1grGdCTIt4h21CzJs6SnWH4YMQ6G5F5+IEzOHz67L4SQaF0o" crossorigin="anonymous">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/custom.css">
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <i class="bi bi-code-slash me-2"></i>فارس
+        </a>
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">الرئيسية</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">نبذة عني</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="projects.html">المشاريع</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="courses.html">الدورات</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="articles.html">المقالات</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">تواصل معي</a>
+            </li>
+          </ul>
+          
+          <button class="btn btn-outline-secondary btn-sm me-2" id="themeToggle" title="تبديل المظهر">
+            <i class="bi bi-moon"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="hero-section" style="padding: 120px 0 80px;">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <h1 class="hero-title">المقالات والمدونة</h1>
+            <p class="hero-subtitle">
+              مقالات تقنية ونصائح في البرمجة وتطوير التطبيقات
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Search and Filter -->
+    <section class="section bg-white">
+      <div class="container">
+        <div class="row mb-4">
+          <div class="col-lg-6 col-md-8 mx-auto">
+            <div class="input-group">
+              <input type="text" class="form-control" id="searchInput" placeholder="ابحث في المقالات...">
+              <button class="btn btn-outline-secondary" type="button">
+                <i class="bi bi-search"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="row mb-4">
+          <div class="col-12 text-center">
+            <div class="btn-group" role="group">
+              <button type="button" class="btn btn-outline-primary filter-btn active" data-filter="all">
+                جميع المقالات
+              </button>
+              <button type="button" class="btn btn-outline-primary filter-btn" data-filter="python">
+                Python
+              </button>
+              <button type="button" class="btn btn-outline-primary filter-btn" data-filter="flutter">
+                Flutter
+              </button>
+              <button type="button" class="btn btn-outline-primary filter-btn" data-filter="web">
+                تطوير الويب
+              </button>
+              <button type="button" class="btn btn-outline-primary filter-btn" data-filter="tips">
+                نصائح
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Featured Article -->
+        <div class="row mb-5">
+          <div class="col-12">
+            <div class="card featured-article">
+              <div class="row g-0">
+                <div class="col-md-6">
+                  <img src="img/article-featured.jpg" class="img-fluid h-100 object-fit-cover" alt="مقال مميز">
+                </div>
+                <div class="col-md-6">
+                  <div class="card-body h-100 d-flex flex-column">
+                    <div class="mb-2">
+                      <span class="badge bg-primary me-2">مميز</span>
+                      <span class="badge bg-success">Python</span>
+                    </div>
+                    <h3 class="card-title">دليل شامل لتعلم Python من الصفر</h3>
+                    <p class="card-text flex-grow-1">
+                      مقال شامل يغطي جميع أساسيات لغة Python للمبتدئين، مع أمثلة عملية ومشاريع تطبيقية 
+                      تساعدك على فهم اللغة وإتقانها خطوة بخطوة.
+                    </p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <small class="text-muted">
+                        <i class="bi bi-calendar me-1"></i>15 ديسمبر 2024
+                        <i class="bi bi-clock me-1 ms-3"></i>10 دقائق قراءة
+                      </small>
+                      <a href="#" class="btn btn-primary">اقرأ المزيد</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Articles Grid -->
+        <div class="row">
+          <!-- Article 1 -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <article class="card article-card h-100 searchable-item" data-category="flutter">
+              <img src="img/article1.jpg" class="card-img-top" alt="أفضل ممارسات Flutter">
+              <div class="card-body">
+                <div class="mb-2">
+                  <span class="badge bg-primary">Flutter</span>
+                </div>
+                <h5 class="card-title">أفضل ممارسات تطوير تطبيقات Flutter</h5>
+                <p class="card-text">
+                  تعرف على أهم النصائح والممارسات الجيدة لتطوير تطبيقات Flutter احترافية وقابلة للصيانة.
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <small class="text-muted">
+                    <i class="bi bi-calendar me-1"></i>10 ديسمبر 2024
+                  </small>
+                  <small class="text-muted">
+                    <i class="bi bi-clock me-1"></i>7 دقائق
+                  </small>
+                </div>
+              </div>
+              <div class="card-footer bg-transparent">
+                <a href="#" class="btn btn-outline-primary btn-sm">اقرأ المقال</a>
+                <button class="btn btn-outline-secondary btn-sm float-end" onclick="copyToClipboard(window.location.href + '#article1')">
+                  <i class="bi bi-share"></i>
+                </button>
+              </div>
+            </article>
+          </div>
+
+          <!-- Article 2 -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <article class="card article-card h-100 searchable-item" data-category="python">
+              <img src="img/article2.jpg" class="card-img-top" alt="Python للمبتدئين">
+              <div class="card-body">
+                <div class="mb-2">
+                  <span class="badge bg-success">Python</span>
+                </div>
+                <h5 class="card-title">كيفية البدء في تعلم Python</h5>
+                <p class="card-text">
+                  دليل مبسط للمبتدئين الذين يريدون تعلم لغة Python من الصفر مع أهم المصادر والنصائح.
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <small class="text-muted">
+                    <i class="bi bi-calendar me-1"></i>5 ديسمبر 2024
+                  </small>
+                  <small class="text-muted">
+                    <i class="bi bi-clock me-1"></i>5 دقائق
+                  </small>
+                </div>
+              </div>
+              <div class="card-footer bg-transparent">
+                <a href="#" class="btn btn-outline-primary btn-sm">اقرأ المقال</a>
+                <button class="btn btn-outline-secondary btn-sm float-end" onclick="copyToClipboard(window.location.href + '#article2')">
+                  <i class="bi bi-share"></i>
+                </button>
+              </div>
+            </article>
+          </div>
+
+          <!-- Article 3 -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <article class="card article-card h-100 searchable-item" data-category="web">
+              <img src="img/article3.jpg" class="card-img-top" alt="تطوير المواقع المتجاوبة">
+              <div class="card-body">
+                <div class="mb-2">
+                  <span class="badge bg-info">CSS</span>
+                </div>
+                <h5 class="card-title">تطوير مواقع متجاوبة بـ CSS Grid</h5>
+                <p class="card-text">
+                  تعلم كيفية استخدام CSS Grid لإنشاء تخطيطات مواقع ويب متجاوبة وحديثة.
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <small class="text-muted">
+                    <i class="bi bi-calendar me-1"></i>1 ديسمبر 2024
+                  </small>
+                  <small class="text-muted">
+                    <i class="bi bi-clock me-1"></i>8 دقائق
+                  </small>
+                </div>
+              </div>
+              <div class="card-footer bg-transparent">
+                <a href="#" class="btn btn-outline-primary btn-sm">اقرأ المقال</a>
+                <button class="btn btn-outline-secondary btn-sm float-end" onclick="copyToClipboard(window.location.href + '#article3')">
+                  <i class="bi bi-share"></i>
+                </button>
+              </div>
+            </article>
+          </div>
+
+          <!-- Article 4 -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <article class="card article-card h-100 searchable-item" data-category="tips">
+              <img src="img/article4.jpg" class="card-img-top" alt="نصائح للمطورين">
+              <div class="card-body">
+                <div class="mb-2">
+                  <span class="badge bg-warning">نصائح</span>
+                </div>
+                <h5 class="card-title">10 نصائح لتحسين إنتاجيتك كمطور</h5>
+                <p class="card-text">
+                  نصائح عملية ومجربة لزيادة إنتاجيتك وتحسين جودة الكود الذي تكتبه.
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <small class="text-muted">
+                    <i class="bi bi-calendar me-1"></i>28 نوفمبر 2024
+                  </small>
+                  <small class="text-muted">
+                    <i class="bi bi-clock me-1"></i>6 دقائق
+                  </small>
+                </div>
+              </div>
+              <div class="card-footer bg-transparent">
+                <a href="#" class="btn btn-outline-primary btn-sm">اقرأ المقال</a>
+                <button class="btn btn-outline-secondary btn-sm float-end" onclick="copyToClipboard(window.location.href + '#article4')">
+                  <i class="bi bi-share"></i>
+                </button>
+              </div>
+            </article>
+          </div>
+
+          <!-- Article 5 -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <article class="card article-card h-100 searchable-item" data-category="python">
+              <img src="img/article5.jpg" class="card-img-top" alt="Django vs Flask">
+              <div class="card-body">
+                <div class="mb-2">
+                  <span class="badge bg-success">Python</span>
+                </div>
+                <h5 class="card-title">Django vs Flask: أيهما أفضل؟</h5>
+                <p class="card-text">
+                  مقارنة شاملة بين إطاري العمل Django و Flask لمساعدتك في اختيار الأنسب لمشروعك.
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <small class="text-muted">
+                    <i class="bi bi-calendar me-1"></i>25 نوفمبر 2024
+                  </small>
+                  <small class="text-muted">
+                    <i class="bi bi-clock me-1"></i>12 دقيقة
+                  </small>
+                </div>
+              </div>
+              <div class="card-footer bg-transparent">
+                <a href="#" class="btn btn-outline-primary btn-sm">اقرأ المقال</a>
+                <button class="btn btn-outline-secondary btn-sm float-end" onclick="copyToClipboard(window.location.href + '#article5')">
+                  <i class="bi bi-share"></i>
+                </button>
+              </div>
+            </article>
+          </div>
+
+          <!-- Article 6 -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <article class="card article-card h-100 searchable-item" data-category="flutter">
+              <img src="img/article6.jpg" class="card-img-top" alt="State Management في Flutter">
+              <div class="card-body">
+                <div class="mb-2">
+                  <span class="badge bg-primary">Flutter</span>
+                </div>
+                <h5 class="card-title">إدارة الحالة في Flutter</h5>
+                <p class="card-text">
+                  دليل شامل لفهم وتطبيق أنماط إدارة الحالة المختلفة في تطبيقات Flutter.
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <small class="text-muted">
+                    <i class="bi bi-calendar me-1"></i>20 نوفمبر 2024
+                  </small>
+                  <small class="text-muted">
+                    <i class="bi bi-clock me-1"></i>15 دقيقة
+                  </small>
+                </div>
+              </div>
+              <div class="card-footer bg-transparent">
+                <a href="#" class="btn btn-outline-primary btn-sm">اقرأ المقال</a>
+                <button class="btn btn-outline-secondary btn-sm float-end" onclick="copyToClipboard(window.location.href + '#article6')">
+                  <i class="bi bi-share"></i>
+                </button>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="row">
+          <div class="col-12">
+            <nav aria-label="صفحات المقالات">
+              <ul class="pagination justify-content-center">
+                <li class="page-item disabled">
+                  <a class="page-link" href="#" tabindex="-1">السابق</a>
+                </li>
+                <li class="page-item active">
+                  <a class="page-link" href="#">1</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">2</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">3</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">التالي</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter Subscription -->
+    <section class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <h2>اشترك في النشرة البريدية</h2>
+            <p class="lead mb-4">
+              احصل على أحدث المقالات والنصائح التقنية مباشرة في بريدك الإلكتروني
+            </p>
+            <form class="row g-3 justify-content-center">
+              <div class="col-md-6">
+                <input type="email" class="form-control" placeholder="بريدك الإلكتروني" required>
+              </div>
+              <div class="col-auto">
+                <button type="submit" class="btn btn-primary">
+                  <i class="bi bi-envelope me-2"></i>اشترك الآن
+                </button>
+              </div>
+            </form>
+            <small class="text-muted mt-2 d-block">
+              لن نرسل لك رسائل مزعجة. يمكنك إلغاء الاشتراك في أي وقت.
+            </small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Popular Tags -->
+    <section class="section bg-white">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <h2 class="section-title">المواضيع الشائعة</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 text-center">
+            <div class="tags-cloud">
+              <a href="#" class="badge bg-primary me-2 mb-2 p-2">Python</a>
+              <a href="#" class="badge bg-info me-2 mb-2 p-2">Flutter</a>
+              <a href="#" class="badge bg-success me-2 mb-2 p-2">Django</a>
+              <a href="#" class="badge bg-warning me-2 mb-2 p-2">JavaScript</a>
+              <a href="#" class="badge bg-secondary me-2 mb-2 p-2">CSS</a>
+              <a href="#" class="badge bg-danger me-2 mb-2 p-2">HTML</a>
+              <a href="#" class="badge bg-dark me-2 mb-2 p-2">Git</a>
+              <a href="#" class="badge bg-primary me-2 mb-2 p-2">API</a>
+              <a href="#" class="badge bg-info me-2 mb-2 p-2">Database</a>
+              <a href="#" class="badge bg-success me-2 mb-2 p-2">Mobile Development</a>
+              <a href="#" class="badge bg-warning me-2 mb-2 p-2">Web Development</a>
+              <a href="#" class="badge bg-secondary me-2 mb-2 p-2">UI/UX</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h5>فارس</h5>
+            <p>
+              مطور ومصمم مواقع متخصص في Python و Flutter.
+              أحب إنشاء حلول تقنية مبتكرة.
+            </p>
+            <div class="social-icons">
+              <a href="#" title="GitHub"><i class="bi bi-github"></i></a>
+              <a href="#" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+              <a href="#" title="Twitter"><i class="bi bi-twitter"></i></a>
+              <a href="#" title="Instagram"><i class="bi bi-instagram"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 mb-4">
+            <h5>روابط سريعة</h5>
+            <ul class="list-unstyled">
+              <li><a href="index.html">الرئيسية</a></li>
+              <li><a href="about.html">نبذة عني</a></li>
+              <li><a href="projects.html">المشاريع</a></li>
+              <li><a href="contact.html">تواصل معي</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mb-4">
+            <h5>الخدمات</h5>
+            <ul class="list-unstyled">
+              <li><a href="#">تطوير تطبيقات الجوال</a></li>
+              <li><a href="#">تطوير مواقع الويب</a></li>
+              <li><a href="#">التدريب والتعليم</a></li>
+              <li><a href="#">استشارات تقنية</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mb-4">
+            <h5>تواصل معي</h5>
+            <ul class="list-unstyled">
+              <li><i class="bi bi-envelope me-2"></i>fares@example.com</li>
+              <li><i class="bi bi-phone me-2"></i>+966 50 123 4567</li>
+              <li><i class="bi bi-geo-alt me-2"></i>الرياض، السعودية</li>
+            </ul>
+          </div>
+        </div>
+
+        <hr class="my-4">
+
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <p class="mb-0">&copy; 2024 فارس. جميع الحقوق محفوظة.</p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <a href="#" class="text-light me-3">سياسة الخصوصية</a>
+            <a href="#" class="text-light">شروط الاستخدام</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="btn btn-primary position-fixed" style="bottom: 20px; left: 20px; display: none; z-index: 1000;">
+      <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="js/main.js"></script>
+
+    <!-- Articles filtering and search script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const articleCards = document.querySelectorAll('.article-card');
+        const searchInput = document.getElementById('searchInput');
+
+        // Filter functionality
+        filterBtns.forEach(btn => {
+          btn.addEventListener('click', function() {
+            const filter = this.dataset.filter;
+
+            // Update active button
+            filterBtns.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+
+            // Filter articles
+            articleCards.forEach(card => {
+              if (filter === 'all' || card.dataset.category === filter) {
+                card.parentElement.style.display = 'block';
+              } else {
+                card.parentElement.style.display = 'none';
+              }
+            });
+          });
+        });
+
+        // Search functionality
+        searchInput.addEventListener('input', function() {
+          const searchTerm = this.value.toLowerCase();
+
+          articleCards.forEach(card => {
+            const title = card.querySelector('.card-title').textContent.toLowerCase();
+            const content = card.querySelector('.card-text').textContent.toLowerCase();
+
+            if (title.includes(searchTerm) || content.includes(searchTerm)) {
+              card.parentElement.style.display = 'block';
+            } else {
+              card.parentElement.style.display = 'none';
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

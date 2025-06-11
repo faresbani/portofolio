@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>فارس | المشاريع</title>
+    <meta name="description" content="مشاريع فارس في تطوير التطبيقات والمواقع - Python, Flutter, تطوير الويب">
+
+    <!-- Bootstrap RTL CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.rtl.min.css" integrity="sha384-PRrgQVJ8NNHGieOA1grGdCTIt4h21CzJs6SnWH4YMQ6G5F5+IEzOHz67L4SQaF0o" crossorigin="anonymous">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/custom.css">
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <i class="bi bi-code-slash me-2"></i>فارس
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">الرئيسية</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">نبذة عني</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="projects.html">المشاريع</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="courses.html">الدورات</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="articles.html">المقالات</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">تواصل معي</a>
+            </li>
+          </ul>
+
+          <button class="btn btn-outline-secondary btn-sm me-2" id="themeToggle" title="تبديل المظهر">
+            <i class="bi bi-moon"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="hero-section" style="padding: 120px 0 80px;">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <h1 class="hero-title">المشاريع</h1>
+            <p class="hero-subtitle">
+              عرض لأهم المشاريع التي قمت بتطويرها باستخدام أحدث التقنيات
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project Categories -->
+    <section class="section bg-white">
+      <div class="container">
+        <div class="row mb-4">
+          <div class="col-12 text-center">
+            <div class="btn-group" role="group">
+              <button type="button" class="btn btn-outline-primary filter-btn active" data-filter="all">
+                جميع المشاريع
+              </button>
+              <button type="button" class="btn btn-outline-primary filter-btn" data-filter="mobile">
+                تطبيقات الجوال
+              </button>
+              <button type="button" class="btn btn-outline-primary filter-btn" data-filter="web">
+                مواقع الويب
+              </button>
+              <button type="button" class="btn btn-outline-primary filter-btn" data-filter="data">
+                تحليل البيانات
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="row">
+          <!-- Project 1 -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card project-card h-100" data-category="mobile">
+              <img src="img/project1.jpg" class="card-img-top" alt="تطبيق إدارة المهام">
+              <div class="card-body">
+                <div class="mb-2">
+                  <span class="badge bg-primary me-1">Flutter</span>
+                  <span class="badge bg-info me-1">Mobile</span>
+                </div>
+                <h5 class="card-title">تطبيق إدارة المهام</h5>
+                <p class="card-text">
+                  تطبيق Flutter لإدارة المهام اليومية مع واجهة مستخدم جميلة ومميزات متقدمة مثل التذكيرات والتصنيفات.
+                </p>
+                <div class="mb-3">
+                  <h6 class="text-muted mb-2">التقنيات المستخدمة:</h6>
+                  <small class="text-muted">Flutter • Dart • SQLite • Provider</small>
+                </div>
+              </div>
+              <div class="card-footer bg-transparent">
+                <div class="d-flex justify-content-between">
+                  <a href="#" class="btn btn-outline-primary btn-sm">
+                    <i class="bi bi-eye me-1"></i>معاينة
+                  </a>
+                  <a href="#" class="btn btn-outline-secondary btn-sm">
+                    <i class="bi bi-github me-1"></i>الكود
+                  </a>
+                  <span class="badge bg-success">مكتمل</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card project-card h-100" data-category="web">
+              <img src="img/project2.jpg" class="card-img-top" alt="موقع تجارة إلكترونية">
+              <div class="card-body">
+                <div class="mb-2">
+                  <span class="badge bg-success me-1">Django</span>
+                  <span class="badge bg-warning me-1">Web</span>
+                </div>
+                <h5 class="card-title">موقع تجارة إلكترونية</h5>
+                <p class="card-text">
+                  موقع ويب متكامل للتجارة الإلكترونية مبني بـ Python Django مع لوحة تحكم إدارية شاملة.
+                </p>
+                <div class="mb-3">
+                  <h6 class="text-muted mb-2">التقنيات المستخدمة:</h6>
+                  <small class="text-muted">Python • Django • PostgreSQL • Bootstrap</small>
+                </div>
+              </div>
+              <div class="card-footer bg-transparent">
+                <div class="d-flex justify-content-between">
+                  <a href="#" class="btn btn-outline-primary btn-sm">
+                    <i class="bi bi-eye me-1"></i>معاينة
+                  </a>
+                  <a href="#" class="btn btn-outline-secondary btn-sm">
+                    <i class="bi bi-github me-1"></i>الكود
+                  </a>
+                  <span class="badge bg-success">مكتمل</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card project-card h-100" data-category="data">
+              <img src="img/project3.jpg" class="card-img-top" alt="أداة تحليل البيانات">
+              <div class="card-body">
+                <div class="mb-2">
+                  <span class="badge bg-warning me-1">Python</span>
+                  <span class="badge bg-secondary me-1">Data</span>
+                </div>
+                <h5 class="card-title">أداة تحليل البيانات</h5>
+                <p class="card-text">
+                  أداة Python لتحليل البيانات وإنشاء التقارير مع واجهة مستخدم تفاعلية باستخدام Streamlit.
+                </p>
+                <div class="mb-3">
+                  <h6 class="text-muted mb-2">التقنيات المستخدمة:</h6>
+                  <small class="text-muted">Python • Pandas • Matplotlib • Streamlit</small>
+                </div>
+              </div>
+              <div class="card-footer bg-transparent">
+                <div class="d-flex justify-content-between">
+                  <a href="#" class="btn btn-outline-primary btn-sm">
+                    <i class="bi bi-eye me-1"></i>معاينة
+                  </a>
+                  <a href="#" class="btn btn-outline-secondary btn-sm">
+                    <i class="bi bi-github me-1"></i>الكود
+                  </a>
+                  <span class="badge bg-success">مكتمل</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4 -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card project-card h-100" data-category="mobile">
+              <img src="img/project4.jpg" class="card-img-top" alt="تطبيق الطقس">
+              <div class="card-body">
+                <div class="mb-2">
+                  <span class="badge bg-primary me-1">Flutter</span>
+                  <span class="badge bg-info me-1">Mobile</span>
+                </div>
+                <h5 class="card-title">تطبيق الطقس</h5>
+                <p class="card-text">
+                  تطبيق جوال لعرض حالة الطقس مع تنبؤات دقيقة وواجهة مستخدم جذابة ومتحركة.
+                </p>
+                <div class="mb-3">
+                  <h6 class="text-muted mb-2">التقنيات المستخدمة:</h6>
+                  <small class="text-muted">Flutter • Dart • REST API • Geolocator</small>
+                </div>
+              </div>
+              <div class="card-footer bg-transparent">
+                <div class="d-flex justify-content-between">
+                  <a href="#" class="btn btn-outline-primary btn-sm">
+                    <i class="bi bi-eye me-1"></i>معاينة
+                  </a>
+                  <a href="#" class="btn btn-outline-secondary btn-sm">
+                    <i class="bi bi-github me-1"></i>الكود
+                  </a>
+                  <span class="badge bg-success">مكتمل</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 5 -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card project-card h-100" data-category="web">
+              <img src="img/project5.jpg" class="card-img-top" alt="نظام إدارة المكتبة">
+              <div class="card-body">
+                <div class="mb-2">
+                  <span class="badge bg-success me-1">Flask</span>
+                  <span class="badge bg-warning me-1">Web</span>
+                </div>
+                <h5 class="card-title">نظام إدارة المكتبة</h5>
+                <p class="card-text">
+                  نظام ويب شامل لإدارة المكتبات مع إمكانيات الاستعارة والإرجاع وإدارة الأعضاء.
+                </p>
+                <div class="mb-3">
+                  <h6 class="text-muted mb-2">التقنيات المستخدمة:</h6>
+                  <small class="text-muted">Python • Flask • SQLAlchemy • Bootstrap</small>
+                </div>
+              </div>
+              <div class="card-footer bg-transparent">
+                <div class="d-flex justify-content-between">
+                  <a href="#" class="btn btn-outline-primary btn-sm">
+                    <i class="bi bi-eye me-1"></i>معاينة
+                  </a>
+                  <a href="#" class="btn btn-outline-secondary btn-sm">
+                    <i class="bi bi-github me-1"></i>الكود
+                  </a>
+                  <span class="badge bg-warning">قيد التطوير</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 6 -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card project-card h-100" data-category="web">
+              <img src="img/project6.jpg" class="card-img-top" alt="لوحة تحكم تحليلية">
+              <div class="card-body">
+                <div class="mb-2">
+                  <span class="badge bg-danger me-1">React</span>
+                  <span class="badge bg-warning me-1">Web</span>
+                </div>
+                <h5 class="card-title">لوحة تحكم تحليلية</h5>
+                <p class="card-text">
+                  لوحة تحكم تفاعلية لعرض البيانات والإحصائيات مع رسوم بيانية متقدمة وتحديث فوري.
+                </p>
+                <div class="mb-3">
+                  <h6 class="text-muted mb-2">التقنيات المستخدمة:</h6>
+                  <small class="text-muted">React • D3.js • Node.js • MongoDB</small>
+                </div>
+              </div>
+              <div class="card-footer bg-transparent">
+                <div class="d-flex justify-content-between">
+                  <a href="#" class="btn btn-outline-primary btn-sm">
+                    <i class="bi bi-eye me-1"></i>معاينة
+                  </a>
+                  <a href="#" class="btn btn-outline-secondary btn-sm">
+                    <i class="bi bi-github me-1"></i>الكود
+                  </a>
+                  <span class="badge bg-secondary">مخطط</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project Stats -->
+    <section class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <h2 class="section-title">إحصائيات المشاريع</h2>
+          </div>
+        </div>
+        <div class="row text-center">
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card">
+              <div class="card-body">
+                <div class="mb-3">
+                  <i class="bi bi-check-circle" style="font-size: 3rem; color: var(--secondary-color);"></i>
+                </div>
+                <h3 class="text-primary">15+</h3>
+                <p class="text-muted">مشروع مكتمل</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card">
+              <div class="card-body">
+                <div class="mb-3">
+                  <i class="bi bi-people" style="font-size: 3rem; color: var(--secondary-color);"></i>
+                </div>
+                <h3 class="text-primary">50+</h3>
+                <p class="text-muted">عميل راضي</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card">
+              <div class="card-body">
+                <div class="mb-3">
+                  <i class="bi bi-code-slash" style="font-size: 3rem; color: var(--secondary-color);"></i>
+                </div>
+                <h3 class="text-primary">10+</h3>
+                <p class="text-muted">تقنية مختلفة</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card">
+              <div class="card-body">
+                <div class="mb-3">
+                  <i class="bi bi-award" style="font-size: 3rem; color: var(--secondary-color);"></i>
+                </div>
+                <h3 class="text-primary">3+</h3>
+                <p class="text-muted">سنوات خبرة</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section bg-primary text-white">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <h2>هل لديك مشروع في ذهنك؟</h2>
+            <p class="lead mb-4">
+              دعنا نتحدث حول كيف يمكنني مساعدتك في تحويل فكرتك إلى واقع رقمي.
+            </p>
+            <a href="contact.html" class="btn btn-light btn-lg">
+              <i class="bi bi-envelope me-2"></i>ابدأ المحادثة
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h5>فارس</h5>
+            <p>
+              مطور ومصمم مواقع متخصص في Python و Flutter.
+              أحب إنشاء حلول تقنية مبتكرة.
+            </p>
+            <div class="social-icons">
+              <a href="#" title="GitHub"><i class="bi bi-github"></i></a>
+              <a href="#" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+              <a href="#" title="Twitter"><i class="bi bi-twitter"></i></a>
+              <a href="#" title="Instagram"><i class="bi bi-instagram"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 mb-4">
+            <h5>روابط سريعة</h5>
+            <ul class="list-unstyled">
+              <li><a href="index.html">الرئيسية</a></li>
+              <li><a href="about.html">نبذة عني</a></li>
+              <li><a href="projects.html">المشاريع</a></li>
+              <li><a href="contact.html">تواصل معي</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mb-4">
+            <h5>الخدمات</h5>
+            <ul class="list-unstyled">
+              <li><a href="#">تطوير تطبيقات الجوال</a></li>
+              <li><a href="#">تطوير مواقع الويب</a></li>
+              <li><a href="#">التدريب والتعليم</a></li>
+              <li><a href="#">استشارات تقنية</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mb-4">
+            <h5>تواصل معي</h5>
+            <ul class="list-unstyled">
+              <li><i class="bi bi-envelope me-2"></i>fares@example.com</li>
+              <li><i class="bi bi-phone me-2"></i>+966 50 123 4567</li>
+              <li><i class="bi bi-geo-alt me-2"></i>الرياض، السعودية</li>
+            </ul>
+          </div>
+        </div>
+
+        <hr class="my-4">
+
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <p class="mb-0">&copy; 2024 فارس. جميع الحقوق محفوظة.</p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <a href="#" class="text-light me-3">سياسة الخصوصية</a>
+            <a href="#" class="text-light">شروط الاستخدام</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="btn btn-primary position-fixed" style="bottom: 20px; left: 20px; display: none; z-index: 1000;">
+      <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="js/main.js"></script>
+
+    <!-- Project filtering script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterBtns.forEach(btn => {
+          btn.addEventListener('click', function() {
+            const filter = this.dataset.filter;
+
+            // Update active button
+            filterBtns.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+
+            // Filter projects
+            projectCards.forEach(card => {
+              if (filter === 'all' || card.dataset.category === filter) {
+                card.parentElement.style.display = 'block';
+                card.classList.add('fade-in-up');
+              } else {
+                card.parentElement.style.display = 'none';
+              }
+            });
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
