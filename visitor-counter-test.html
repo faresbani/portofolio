@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اختبار عداد الزوار</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: white;
+            padding: 50px 20px;
+        }
+        .test-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.1);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+        .footer-demo {
+            background: #2c3e50;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+        .status-box {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid #3498db;
+        }
+        .error-box {
+            background: rgba(231, 76, 60, 0.2);
+            border-left-color: #e74c3c;
+        }
+        .success-box {
+            background: rgba(39, 174, 96, 0.2);
+            border-left-color: #27ae60;
+        }
+        .code-box {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 14px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1 class="text-center mb-4">🧪 اختبار عداد الزوار</h1>
+        
+        <div id="status-container">
+            <div class="status-box">
+                <h4>📊 حالة التحميل</h4>
+                <p id="loading-status">جاري تحميل النظام...</p>
+            </div>
+        </div>
+
+        <div class="status-box">
+            <h4>🔍 معلومات التشخيص</h4>
+            <div class="code-box">
+                <div>الصفحة: <span id="current-page"></span></div>
+                <div>الوقت: <span id="current-time"></span></div>
+                <div>المتصفح: <span id="browser-info"></span></div>
+                <div>localStorage متاح: <span id="storage-available"></span></div>
+            </div>
+        </div>
+
+        <div class="status-box">
+            <h4>📈 بيانات الإحصائيات</h4>
+            <div class="code-box" id="analytics-data">
+                جاري تحميل البيانات...
+            </div>
+        </div>
+
+        <div class="status-box">
+            <h4>👁️ معاينة العداد</h4>
+            <div class="footer-demo">
+                <div class="row align-items-center">
+                    <div class="col-md-4">
+                        <p class="mb-0">&copy; 2024 فارس. جميع الحقوق محفوظة.</p>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <div id="visitor-counter" class="text-light">
+                            <!-- Analytics counter will be inserted here -->
+                            <div class="analytics-display">
+                                <div class="counter-stats">
+                                    <div class="counter-item">
+                                        <i class="bi bi-eye"></i>
+                                        <span class="counter-number">...</span>
+                                        <span class="counter-label">مشاهدة</span>
+                                    </div>
+                                    <div class="counter-divider">•</div>
+                                    <div class="counter-item">
+                                        <i class="bi bi-people"></i>
+                                        <span class="counter-number">...</span>
+                                        <span class="counter-label">زائر</span>
+                                    </div>
+                                </div>
+                                <div class="counter-subtitle">جاري التحميل...</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-md-end">
+                        <a href="#" class="text-light">سياسة الخصوصية</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="status-box">
+            <h4>🔧 أدوات الاختبار</h4>
+            <div class="d-flex gap-2 flex-wrap">
+                <button class="btn btn-primary" onclick="refreshCounter()">
+                    <i class="bi bi-arrow-clockwise"></i> تحديث العداد
+                </button>
+                <button class="btn btn-success" onclick="simulateVisit()">
+                    <i class="bi bi-plus-circle"></i> محاكاة زيارة
+                </button>
+                <button class="btn btn-info" onclick="showAnalytics()">
+                    <i class="bi bi-graph-up"></i> عرض البيانات
+                </button>
+                <button class="btn btn-warning" onclick="resetData()">
+                    <i class="bi bi-trash"></i> إعادة تعيين
+                </button>
+            </div>
+        </div>
+
+        <div class="status-box">
+            <h4>📝 سجل الأحداث</h4>
+            <div class="code-box" id="event-log" style="max-height: 200px; overflow-y: auto;">
+                <!-- Event log will be populated here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Analytics JavaScript -->
+    <script src="js/analytics.js"></script>
+    
+    <script>
+        // Test functions
+        let eventLog = [];
+        
+        function logEvent(message, type = 'info') {
+            const timestamp = new Date().toLocaleTimeString('ar-SA');
+            eventLog.push(`[${timestamp}] ${message}`);
+            updateEventLog();
+            console.log(`${type.toUpperCase()}: ${message}`);
+        }
+        
+        function updateEventLog() {
+            const logElement = document.getElementById('event-log');
+            logElement.innerHTML = eventLog.slice(-10).join('<br>');
+            logElement.scrollTop = logElement.scrollHeight;
+        }
+        
+        function updateDiagnostics() {
+            document.getElementById('current-page').textContent = window.location.pathname;
+            document.getElementById('current-time').textContent = new Date().toLocaleString('ar-SA');
+            document.getElementById('browser-info').textContent = navigator.userAgent.split(' ')[0];
+            document.getElementById('storage-available').textContent = 
+                typeof(Storage) !== "undefined" ? 'نعم ✅' : 'لا ❌';
+        }
+        
+        function refreshCounter() {
+            logEvent('تحديث العداد يدوياً');
+            if (window.portfolioAnalytics) {
+                window.portfolioAnalytics.displayCounter();
+                showAnalytics();
+            } else {
+                logEvent('خطأ: نظام الإحصائيات غير متاح', 'error');
+            }
+        }
+        
+        function simulateVisit() {
+            logEvent('محاكاة زيارة جديدة');
+            if (window.portfolioAnalytics) {
+                window.portfolioAnalytics.trackPageView();
+                window.portfolioAnalytics.displayCounter();
+                showAnalytics();
+            } else {
+                logEvent('خطأ: نظام الإحصائيات غير متاح', 'error');
+            }
+        }
+        
+        function showAnalytics() {
+            if (window.portfolioAnalytics) {
+                const data = window.portfolioAnalytics.getSummary();
+                document.getElementById('analytics-data').innerHTML = `
+                    <div>إجمالي المشاهدات: ${data.totalViews}</div>
+                    <div>الزوار الفريدون: ${data.uniqueVisitors}</div>
+                    <div>الجلسات: ${data.sessions}</div>
+                    <div>أول زيارة: ${new Date(data.firstVisit).toLocaleString('ar-SA')}</div>
+                    <div>آخر زيارة: ${new Date(data.lastVisit).toLocaleString('ar-SA')}</div>
+                `;
+                logEvent('تم تحديث بيانات الإحصائيات');
+            } else {
+                document.getElementById('analytics-data').innerHTML = 'خطأ: نظام الإحصائيات غير متاح';
+                logEvent('خطأ: لا يمكن الوصول لبيانات الإحصائيات', 'error');
+            }
+        }
+        
+        function resetData() {
+            if (confirm('هل أنت متأكد من إعادة تعيين جميع البيانات؟')) {
+                if (window.portfolioAnalytics) {
+                    window.portfolioAnalytics.reset();
+                    window.portfolioAnalytics.displayCounter();
+                    showAnalytics();
+                    logEvent('تم إعادة تعيين جميع البيانات');
+                } else {
+                    logEvent('خطأ: نظام الإحصائيات غير متاح', 'error');
+                }
+            }
+        }
+        
+        // Initialize diagnostics
+        updateDiagnostics();
+        setInterval(updateDiagnostics, 5000);
+        
+        // Check analytics status
+        function checkAnalyticsStatus() {
+            const statusElement = document.getElementById('loading-status');
+            const statusContainer = document.getElementById('status-container');
+            
+            if (window.portfolioAnalytics) {
+                statusElement.innerHTML = '✅ نظام الإحصائيات محمل بنجاح';
+                statusContainer.className = 'status-box success-box';
+                showAnalytics();
+                logEvent('نظام الإحصائيات جاهز للعمل');
+            } else {
+                statusElement.innerHTML = '❌ فشل في تحميل نظام الإحصائيات';
+                statusContainer.className = 'status-box error-box';
+                logEvent('فشل في تحميل نظام الإحصائيات', 'error');
+            }
+        }
+        
+        // Check status multiple times
+        setTimeout(checkAnalyticsStatus, 500);
+        setTimeout(checkAnalyticsStatus, 1000);
+        setTimeout(checkAnalyticsStatus, 2000);
+        
+        logEvent('بدء اختبار عداد الزوار');
+    </script>
+</body>
+</html>

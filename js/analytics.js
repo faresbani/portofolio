@@ -149,39 +149,64 @@ class SimpleAnalytics {
     displayCounter() {
         const counterElement = document.getElementById('visitor-counter');
         if (counterElement) {
-            const analytics = this.getAnalytics();
-            analytics.uniqueVisitors = new Set(analytics.uniqueVisitors);
+            try {
+                const analytics = this.getAnalytics();
+                analytics.uniqueVisitors = new Set(analytics.uniqueVisitors);
 
-            // Calculate days since first visit
-            const daysSinceStart = Math.floor((Date.now() - analytics.firstVisit) / (1000 * 60 * 60 * 24));
-            const daysText = daysSinceStart === 0 ? 'اليوم' : `${daysSinceStart} يوم`;
+                // Calculate days since first visit
+                const daysSinceStart = Math.floor((Date.now() - analytics.firstVisit) / (1000 * 60 * 60 * 24));
+                const daysText = daysSinceStart === 0 ? 'اليوم' : `${daysSinceStart} يوم`;
 
-            counterElement.innerHTML = `
-                <div class="analytics-display">
-                    <div class="counter-stats">
-                        <div class="counter-item">
-                            <i class="bi bi-eye"></i>
-                            <span class="counter-number">${analytics.totalViews.toLocaleString()}</span>
-                            <span class="counter-label">مشاهدة</span>
+                counterElement.innerHTML = `
+                    <div class="analytics-display">
+                        <div class="counter-stats">
+                            <div class="counter-item">
+                                <i class="bi bi-eye"></i>
+                                <span class="counter-number">${analytics.totalViews.toLocaleString()}</span>
+                                <span class="counter-label">مشاهدة</span>
+                            </div>
+                            <div class="counter-divider">•</div>
+                            <div class="counter-item">
+                                <i class="bi bi-people"></i>
+                                <span class="counter-number">${analytics.uniqueVisitors.size.toLocaleString()}</span>
+                                <span class="counter-label">زائر</span>
+                            </div>
+                            <div class="counter-divider">•</div>
+                            <div class="counter-item">
+                                <i class="bi bi-calendar-check"></i>
+                                <span class="counter-number">${daysText}</span>
+                                <span class="counter-label">منذ البداية</span>
+                            </div>
                         </div>
-                        <div class="counter-divider">•</div>
-                        <div class="counter-item">
-                            <i class="bi bi-people"></i>
-                            <span class="counter-number">${analytics.uniqueVisitors.size.toLocaleString()}</span>
-                            <span class="counter-label">زائر</span>
-                        </div>
-                        <div class="counter-divider">•</div>
-                        <div class="counter-item">
-                            <i class="bi bi-calendar-check"></i>
-                            <span class="counter-number">${daysText}</span>
-                            <span class="counter-label">منذ البداية</span>
+                        <div class="counter-subtitle">
+                            شكراً لزيارتكم موقعي الشخصي
                         </div>
                     </div>
-                    <div class="counter-subtitle">
-                        شكراً لزيارتكم موقعي الشخصي
+                `;
+            } catch (error) {
+                console.error('Analytics display error:', error);
+                // Fallback display
+                counterElement.innerHTML = `
+                    <div class="analytics-display">
+                        <div class="counter-stats">
+                            <div class="counter-item">
+                                <i class="bi bi-eye"></i>
+                                <span class="counter-number">1</span>
+                                <span class="counter-label">مشاهدة</span>
+                            </div>
+                            <div class="counter-divider">•</div>
+                            <div class="counter-item">
+                                <i class="bi bi-people"></i>
+                                <span class="counter-number">1</span>
+                                <span class="counter-label">زائر</span>
+                            </div>
+                        </div>
+                        <div class="counter-subtitle">
+                            مرحباً بك في موقعي
+                        </div>
                     </div>
-                </div>
-            `;
+                `;
+            }
         }
     }
 
@@ -360,6 +385,70 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
+// Initialize analytics when page loads
+function initializeAnalytics() {
+    try {
+        if (typeof window.portfolioAnalytics === 'undefined') {
+            window.portfolioAnalytics = new PortfolioAnalytics();
+        }
+
+        // Track page view
+        window.portfolioAnalytics.trackPageView();
+
+        // Display counter immediately
+        window.portfolioAnalytics.displayCounter();
+
+        // Update counter every 30 seconds
+        setInterval(() => {
+            window.portfolioAnalytics.displayCounter();
+        }, 30000);
+
+        console.log('✅ Analytics initialized successfully');
+    } catch (error) {
+        console.error('❌ Analytics initialization failed:', error);
+
+        // Fallback: Show basic counter
+        const counterElement = document.getElementById('visitor-counter');
+        if (counterElement) {
+            counterElement.innerHTML = `
+                <div class="analytics-display">
+                    <div class="counter-stats">
+                        <div class="counter-item">
+                            <i class="bi bi-eye"></i>
+                            <span class="counter-number">1</span>
+                            <span class="counter-label">مشاهدة</span>
+                        </div>
+                        <div class="counter-divider">•</div>
+                        <div class="counter-item">
+                            <i class="bi bi-people"></i>
+                            <span class="counter-number">1</span>
+                            <span class="counter-label">زائر</span>
+                        </div>
+                    </div>
+                    <div class="counter-subtitle">
+                        مرحباً بك في موقعي
+                    </div>
+                </div>
+            `;
+        }
+    }
+}
+
+// Multiple initialization attempts to ensure it works
+document.addEventListener('DOMContentLoaded', initializeAnalytics);
+
+// Backup initialization
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeAnalytics);
+} else {
+    initializeAnalytics();
+}
+
+// Additional backup after window load
+window.addEventListener('load', function() {
+    setTimeout(initializeAnalytics, 100);
+});
+
 // Console commands for debugging
 console.log(`
 📊 Portfolio Analytics Loaded!
@@ -368,5 +457,4 @@ Available commands:
 - portfolioAnalytics.getSummary() - View analytics summary
 - portfolioAnalytics.exportData() - Download analytics data
 - portfolioAnalytics.reset() - Reset all data
-
-Current stats:`, analytics.getSummary());
+`);
