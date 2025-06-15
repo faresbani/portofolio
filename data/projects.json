@@ -4,7 +4,15 @@
       "id": 1,
       "title": "تطبيق إدارة المهام",
       "description": "تطبيق Flutter لإدارة المهام اليومية مع واجهة مستخدم جميلة ومميزات متقدمة مثل التذكيرات والتصنيفات.",
+      "detailedDescription": "تطبيق شامل لإدارة المهام اليومية مصمم خصيصاً لزيادة الإنتاجية وتنظيم الوقت. يتميز التطبيق بواجهة مستخدم عصرية وسهلة الاستخدام، مع دعم كامل للغة العربية ونظام تذكيرات ذكي يساعد المستخدمين على إنجاز مهامهم في الوقت المحدد.",
       "image": "img/project1.jpg",
+      "images": [
+        "img/project1.jpg",
+        "img/project1-screen1.jpg",
+        "img/project1-screen2.jpg",
+        "img/project1-screen3.jpg",
+        "img/project1-architecture.jpg"
+      ],
       "category": "mobile",
       "technologies": ["Flutter", "Dart", "SQLite", "Provider"],
       "features": [
@@ -14,16 +22,39 @@
         "إحصائيات الإنتاجية",
         "مزامنة البيانات"
       ],
+      "challenges": [
+        "تصميم واجهة مستخدم متجاوبة تدعم الوضع المظلم والفاتح",
+        "تطوير نظام تذكيرات محلي يعمل في الخلفية",
+        "إدارة حالة التطبيق بكفاءة باستخدام Provider",
+        "تحسين أداء قاعدة البيانات المحلية"
+      ],
+      "solutions": [
+        "استخدام Theme Provider لإدارة المظاهر المختلفة",
+        "تطبيق Local Notifications مع جدولة دقيقة",
+        "تصميم معمارية MVVM نظيفة ومنظمة",
+        "تحسين استعلامات SQLite وإضافة فهرسة"
+      ],
+      "timeline": "3 أشهر",
+      "teamSize": "مطور واحد",
       "demoUrl": "#",
       "githubUrl": "#",
       "status": "completed",
-      "year": "2024"
+      "year": "2024",
+      "detailUrl": "project-1.html"
     },
     {
       "id": 2,
       "title": "موقع تجارة إلكترونية",
       "description": "موقع ويب متكامل للتجارة الإلكترونية مبني بـ Python Django مع لوحة تحكم إدارية شاملة.",
+      "detailedDescription": "منصة تجارة إلكترونية متكاملة تدعم البائعين والمشترين مع نظام إدارة شامل. يتضمن الموقع كتالوج منتجات متقدم، نظام دفع آمن متعدد الطرق، وإدارة مخزون ذكية. تم تطوير الموقع باستخدام Django مع تطبيق أفضل الممارسات في الأمان والأداء.",
       "image": "img/project2.jpg",
+      "images": [
+        "img/project2.jpg",
+        "img/project2-homepage.jpg",
+        "img/project2-products.jpg",
+        "img/project2-admin.jpg",
+        "img/project2-checkout.jpg"
+      ],
       "category": "web",
       "technologies": ["Python", "Django", "PostgreSQL", "Bootstrap", "JavaScript"],
       "features": [
@@ -33,16 +64,39 @@
         "تقارير المبيعات",
         "نظام العضويات"
       ],
+      "challenges": [
+        "تطوير نظام دفع آمن ومتوافق مع معايير PCI DSS",
+        "إدارة المخزون في الوقت الفعلي مع تحديثات متزامنة",
+        "تحسين أداء الموقع للتعامل مع آلاف المنتجات",
+        "تطوير لوحة تحكم إدارية شاملة وسهلة الاستخدام"
+      ],
+      "solutions": [
+        "تطبيق Django REST Framework مع تشفير SSL/TLS",
+        "استخدام Redis للتخزين المؤقت وإدارة الجلسات",
+        "تحسين استعلامات قاعدة البيانات وإضافة فهرسة",
+        "تصميم واجهة إدارية متجاوبة باستخدام Bootstrap"
+      ],
+      "timeline": "4 أشهر",
+      "teamSize": "فريق من 3 مطورين",
       "demoUrl": "#",
       "githubUrl": "#",
       "status": "completed",
-      "year": "2024"
+      "year": "2024",
+      "detailUrl": "project-2.html"
     },
     {
       "id": 3,
       "title": "أداة تحليل البيانات",
       "description": "أداة Python لتحليل البيانات وإنشاء التقارير مع واجهة مستخدم تفاعلية باستخدام Streamlit.",
+      "detailedDescription": "أداة تحليل بيانات قوية ومرنة تمكن المستخدمين من استيراد البيانات من مصادر متعددة وإجراء تحليلات إحصائية متقدمة. تتميز الأداة بواجهة مستخدم تفاعلية بسيطة تسمح بإنشاء رسوم بيانية ديناميكية وتقارير مفصلة دون الحاجة لخبرة برمجية.",
       "image": "img/project3.jpg",
+      "images": [
+        "img/project3.jpg",
+        "img/project3-dashboard.jpg",
+        "img/project3-charts.jpg",
+        "img/project3-import.jpg",
+        "img/project3-reports.jpg"
+      ],
       "category": "data",
       "technologies": ["Python", "Pandas", "Matplotlib", "Streamlit", "NumPy"],
       "features": [
@@ -52,16 +106,39 @@
         "تصدير التقارير",
         "واجهة مستخدم بسيطة"
       ],
+      "challenges": [
+        "التعامل مع ملفات البيانات الكبيرة بكفاءة",
+        "إنشاء رسوم بيانية تفاعلية وسريعة الاستجابة",
+        "تطوير واجهة مستخدم بديهية للمستخدمين غير التقنيين",
+        "ضمان دقة التحليلات الإحصائية المعقدة"
+      ],
+      "solutions": [
+        "استخدام Pandas مع تحسينات الذاكرة وتقسيم البيانات",
+        "تطبيق Plotly مع Streamlit للرسوم التفاعلية",
+        "تصميم واجهة مستخدم مبسطة مع إرشادات واضحة",
+        "تطبيق مكتبات NumPy و SciPy للحسابات الدقيقة"
+      ],
+      "timeline": "2 شهر",
+      "teamSize": "مطور واحد",
       "demoUrl": "#",
       "githubUrl": "#",
       "status": "completed",
-      "year": "2023"
+      "year": "2023",
+      "detailUrl": "project-3.html"
     },
     {
       "id": 4,
       "title": "تطبيق الطقس",
       "description": "تطبيق جوال لعرض حالة الطقس مع تنبؤات دقيقة وواجهة مستخدم جذابة.",
+      "detailedDescription": "تطبيق طقس شامل يوفر معلومات دقيقة ومحدثة عن الأحوال الجوية مع تنبؤات لمدة 7 أيام. يتميز التطبيق بواجهة مستخدم جذابة ومتحركة تعكس حالة الطقس الحالية، مع دعم تحديد الموقع التلقائي وإمكانية إضافة مدن متعددة للمتابعة.",
       "image": "img/project4.jpg",
+      "images": [
+        "img/project4.jpg",
+        "img/project4-main.jpg",
+        "img/project4-forecast.jpg",
+        "img/project4-cities.jpg",
+        "img/project4-settings.jpg"
+      ],
       "category": "mobile",
       "technologies": ["Flutter", "Dart", "REST API", "Geolocator"],
       "features": [
@@ -71,16 +148,39 @@
         "تنبيهات الطقس",
         "واجهة متحركة"
       ],
+      "challenges": [
+        "التكامل مع APIs متعددة للحصول على بيانات دقيقة",
+        "تطوير واجهة مستخدم متحركة تتفاعل مع حالة الطقس",
+        "إدارة صلاحيات الموقع وحالات الاتصال المختلفة",
+        "تحسين استهلاك البطارية مع التحديثات المستمرة"
+      ],
+      "solutions": [
+        "استخدام OpenWeatherMap API مع نظام fallback",
+        "تطبيق Flutter Animations مع Lottie للتأثيرات",
+        "تطوير نظام إدارة حالة شامل للاتصال والأذونات",
+        "تطبيق Background Services محسنة للتحديثات"
+      ],
+      "timeline": "6 أسابيع",
+      "teamSize": "مطور واحد",
       "demoUrl": "#",
       "githubUrl": "#",
       "status": "completed",
-      "year": "2023"
+      "year": "2023",
+      "detailUrl": "project-4.html"
     },
     {
       "id": 5,
       "title": "نظام إدارة المكتبة",
       "description": "نظام ويب شامل لإدارة المكتبات مع إمكانيات الاستعارة والإرجاع وإدارة الأعضاء.",
+      "detailedDescription": "نظام إدارة مكتبة متكامل يهدف إلى رقمنة عمليات المكتبة التقليدية. يشمل النظام فهرسة شاملة للكتب، نظام استعارة وإرجاع ذكي، إدارة الأعضاء والموظفين، وتقارير تفصيلية عن أداء المكتبة. تم تصميم النظام ليكون سهل الاستخدام للمكتبيين والأعضاء على حد سواء.",
       "image": "img/project5.jpg",
+      "images": [
+        "img/project5.jpg",
+        "img/project5-catalog.jpg",
+        "img/project5-borrowing.jpg",
+        "img/project5-members.jpg",
+        "img/project5-reports.jpg"
+      ],
       "category": "web",
       "technologies": ["Python", "Flask", "SQLAlchemy", "Bootstrap", "jQuery"],
       "features": [
@@ -90,16 +190,39 @@
         "تقارير شاملة",
         "بحث متقدم"
       ],
+      "challenges": [
+        "تصميم قاعدة بيانات معقدة للكتب والمؤلفين والفئات",
+        "تطوير نظام استعارة يدعم القواعد المختلفة للمكتبات",
+        "إنشاء نظام بحث متقدم يدعم البحث متعدد المعايير",
+        "تطوير تقارير ديناميكية وقابلة للتخصيص"
+      ],
+      "solutions": [
+        "تطبيق SQLAlchemy ORM مع علاقات معقدة ومحسنة",
+        "تطوير محرك قواعد مرن يدعم التخصيص",
+        "استخدام Elasticsearch للبحث السريع والدقيق",
+        "تطبيق Chart.js مع Flask للتقارير التفاعلية"
+      ],
+      "timeline": "5 أشهر (قيد التطوير)",
+      "teamSize": "فريق من مطورين",
       "demoUrl": "#",
       "githubUrl": "#",
       "status": "in-progress",
-      "year": "2024"
+      "year": "2024",
+      "detailUrl": "project-5.html"
     },
     {
       "id": 6,
       "title": "لوحة تحكم تحليلية",
       "description": "لوحة تحكم تفاعلية لعرض البيانات والإحصائيات مع رسوم بيانية متقدمة.",
+      "detailedDescription": "لوحة تحكم تحليلية متطورة مصممة لعرض البيانات المعقدة بطريقة بصرية وتفاعلية. تدعم اللوحة تحديث البيانات في الوقت الفعلي، رسوم بيانية متقدمة قابلة للتخصيص، وإمكانيات تصدير شاملة. مثالية للشركات التي تحتاج لمراقبة KPIs ومؤشرات الأداء بشكل مستمر.",
       "image": "img/project6.jpg",
+      "images": [
+        "img/project6.jpg",
+        "img/project6-overview.jpg",
+        "img/project6-charts.jpg",
+        "img/project6-realtime.jpg",
+        "img/project6-mobile.jpg"
+      ],
       "category": "web",
       "technologies": ["React", "D3.js", "Node.js", "MongoDB", "Express"],
       "features": [
@@ -109,22 +232,136 @@
         "تخصيص العرض",
         "واجهة متجاوبة"
       ],
+      "challenges": [
+        "تطوير رسوم بيانية معقدة وسريعة الاستجابة",
+        "إدارة تحديث البيانات في الوقت الفعلي لآلاف المستخدمين",
+        "تحسين أداء التطبيق مع كميات كبيرة من البيانات",
+        "تطوير واجهة قابلة للتخصيص بالكامل"
+      ],
+      "solutions": [
+        "استخدام D3.js مع React Hooks للرسوم المحسنة",
+        "تطبيق WebSockets مع Redis للتحديثات الفورية",
+        "تطبيق Virtual Scrolling وتقسيم البيانات",
+        "تطوير نظام Theme Builder مع CSS Variables"
+      ],
+      "timeline": "6 أشهر (مخطط)",
+      "teamSize": "فريق من 4 مطورين",
       "demoUrl": "#",
       "githubUrl": "#",
       "status": "planning",
-      "year": "2024"
+      "year": "2024",
+      "detailUrl": "project-6.html"
+    },
+    {
+      "id": 7,
+      "title": "تطبيق تحويل العملات",
+      "title_en": "Currency Today",
+      "description": "تطبيق Flutter متعدد المنصات لتحويل العملات مع أسعار الصرف المباشرة والرسوم البيانية التاريخية.",
+      "detailedDescription": "تطبيق Currency Today هو حل شامل لتحويل العملات يوفر أسعار صرف مباشرة ودقيقة لأكثر من 100 عملة عالمية. يتميز التطبيق بواجهة مستخدم أنيقة وسهلة الاستخدام، مع إمكانية عرض الرسوم البيانية التاريخية لتتبع اتجاهات أسعار الصرف. تم تطوير التطبيق باستخدام Flutter مما يجعله يعمل بسلاسة على جميع المنصات بما في ذلك Android و iOS و Windows و Linux.",
+      "image": "img/project7.jpg",
+      "images": [
+        "img/project7.jpg",
+        "img/project7-converter.jpg",
+        "img/project7-rates.jpg",
+        "img/project7-charts.jpg",
+        "img/project7-settings.jpg"
+      ],
+      "category": "mobile",
+      "technologies": ["Flutter", "Dart", "BLoC", "HTTP", "FL Chart", "Shared Preferences"],
+      "features": [
+        "تحويل العملات المباشر",
+        "عرض أسعار الصرف الحالية",
+        "رسوم بيانية تاريخية",
+        "دعم متعدد المنصات",
+        "دعم الوضع المظلم والفاتح",
+        "حفظ العملات المفضلة",
+        "واجهة مستخدم متجاوبة",
+        "تحديث تلقائي للأسعار"
+      ],
+      "challenges": [
+        "تطوير واجهة متجاوبة تعمل على جميع أحجام الشاشات والمنصات",
+        "إدارة الحالة بكفاءة مع مصادر بيانات متعددة",
+        "إنشاء رسوم بيانية تفاعلية وسهلة الفهم",
+        "التعامل مع قيود API وحالات انقطاع الاتصال",
+        "تحسين الأداء للحصول على انتقالات سلسة"
+      ],
+      "solutions": [
+        "استخدام Flutter Responsive Framework للتصميم المتجاوب",
+        "تطبيق BLoC pattern لإدارة الحالة بشكل منظم",
+        "استخدام FL Chart لإنشاء رسوم بيانية تفاعلية",
+        "تطبيق Cached Network Image مع آلية fallback",
+        "تحسين الأداء باستخدام const widgets و lazy loading"
+      ],
+      "timeline": "3-4 أسابيع",
+      "teamSize": "مطور واحد",
+      "demoUrl": "#",
+      "githubUrl": "#",
+      "status": "completed",
+      "year": "2024",
+      "detailUrl": "project-7.html"
+    },
+    {
+      "id": 8,
+      "title": "مقسم ومكرر الصوت",
+      "title_en": "Audio Splitter and Repeater",
+      "description": "تطبيق سطح مكتب لمعالجة الصوت وتقسيمه تلقائياً مع إمكانية التكرار والتشغيل بسرعات متغيرة للدراسة والتعلم.",
+      "detailedDescription": "تطبيق متقدم لمعالجة الصوت مصمم خصيصاً لمساعدة الطلاب والمتعلمين في دراسة المحتوى الصوتي. يقوم التطبيق بتقسيم الملفات الصوتية تلقائياً بناءً على كشف الصمت، ويوفر إمكانيات تشغيل متقدمة مثل التكرار والسرعة المتغيرة. يتميز بواجهة عربية كاملة مع دعم RTL وتتبع تاريخ الدراسة لمراقبة التقدم التعليمي.",
+      "image": "img/project8.jpg",
+      "images": [
+        "img/project8.jpg",
+        "img/project8-interface.jpg",
+        "img/project8-waveform.jpg",
+        "img/project8-settings.jpg",
+        "img/project8-history.jpg"
+      ],
+      "category": "desktop",
+      "technologies": ["Python", "PyQt5", "Pydub", "Librosa", "Pygame", "NumPy", "Matplotlib", "SQLite"],
+      "features": [
+        "تقسيم الصوت الذكي بناءً على كشف الصمت",
+        "تشغيل بسرعة متغيرة (0.5x إلى 2.0x)",
+        "تكرار المقاطع للدراسة",
+        "عرض الموجة الصوتية بصرياً",
+        "تتبع تاريخ الدراسة",
+        "واجهة عربية مع دعم RTL",
+        "اختصارات لوحة المفاتيح",
+        "تقسيم بحد أقصى للمدة",
+        "تشغيل تلقائي للمقطع التالي"
+      ],
+      "challenges": [
+        "تطبيق تشغيل بسرعة متغيرة عالية الجودة بدون تشويه النغمة",
+        "تكامل الواجهة العربية مع دعم RTL",
+        "موازنة ثراء الميزات مع بساطة واجهة المستخدم",
+        "التعامل مع تنسيقات صوتية متنوعة بموثوقية",
+        "تطبيق نظام تتبع تاريخ الدراسة",
+        "معالجة الملفات الصوتية الكبيرة بكفاءة"
+      ],
+      "solutions": [
+        "استخدام Librosa لتمديد الوقت عالي الجودة",
+        "تطبيق PyQt5 مع دعم كامل للـ RTL",
+        "تصميم واجهة مستخدم بديهية ومنظمة",
+        "استخدام Pydub للتعامل مع تنسيقات متعددة",
+        "تطبيق SQLite لتخزين بيانات الدراسة",
+        "تحسين الذاكرة مع معالجة الصوت المجزأة"
+      ],
+      "timeline": "6-8 أسابيع",
+      "teamSize": "مطور واحد",
+      "demoUrl": "#",
+      "githubUrl": "#",
+      "status": "completed",
+      "year": "2024",
+      "detailUrl": "project-8.html"
     }
   ],
   "categories": [
     {
       "id": "all",
       "name": "جميع المشاريع",
-      "count": 6
+      "count": 8
     },
     {
       "id": "mobile",
       "name": "تطبيقات الجوال",
-      "count": 2
+      "count": 3
     },
     {
       "id": "web",
@@ -134,6 +371,11 @@
     {
       "id": "data",
       "name": "تحليل البيانات",
+      "count": 1
+    },
+    {
+      "id": "desktop",
+      "name": "تطبيقات سطح المكتب",
       "count": 1
     }
   ],
@@ -147,6 +389,17 @@
     "Bootstrap",
     "SQLite",
     "PostgreSQL",
-    "MongoDB"
+    "MongoDB",
+    "Dart",
+    "BLoC",
+    "HTTP",
+    "FL Chart",
+    "Shared Preferences",
+    "PyQt5",
+    "Pydub",
+    "Librosa",
+    "Pygame",
+    "NumPy",
+    "Matplotlib"
   ]
 }
